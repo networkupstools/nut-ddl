@@ -1,0 +1,6 @@
+Device Dumps Library
+====================
+
+Here you can find a list of user-provided dumps of some supported devices.
+
+Some links to the manuals on how to use/generate them...
