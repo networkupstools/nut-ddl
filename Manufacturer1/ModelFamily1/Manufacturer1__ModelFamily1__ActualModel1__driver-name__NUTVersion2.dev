@@ -1,3 +1,5 @@
+# This is a specific comment, to differentiate with older, non-backward compatible format
+# Version: 2
 # This is a comment and it's ignored everywhere
 var.1: value
 var.2: value
