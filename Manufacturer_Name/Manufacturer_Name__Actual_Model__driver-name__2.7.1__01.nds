@@ -1,47 +1,175 @@
-# This is a specific comment, to differentiate with older, non-backward compatible format
-# Version: 2
-# This is a comment and it's ignored everywhere
+# NDS:VERSION:2
+# ^ version of NDS
+# Normal comments are ignored everywhere
+  # Still ignored
+#again..
+	#..and again
 var.1: value
 var.2: value
-# This is a comment; still ignored everywhere
 var.3: value
+# While 'special' comments are used in DDL generation:
 # var.3:COMMENT:
-# This is a 'special' comment; it's ignored by nut's dummy-ups/whatever_will_replace_it but:
 #
-# - it'll be used by device dumps library generation tool to append a comment to *var.3*
-# - it can contain simple http://asciidoc.org[asciidoc] markup
-# - everything till +# var.3:EOC+ will be used
-# - leading space after the +#+ will be removed
+# Let's talk about comments.
 #
+# Like in +.dev+/+.seq+ files, comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
+# Empty lines are ignored.
+#
+# In addition, +.nds+ files support some special comments, ignored by NUT's dummy-ups/whatever_will_replace_it but used by Devices Dumps Library generation tool.
+#
+# .'Special' comments:
+# Vars comments::
+# Comments that are binded to a particular variable.
+# +
+# --
 # ----
-# a listing block
+# # <var.name>:COMMENT
+# # <comment>
+# # ...
+# # <comment>
+# # <var.name>:EOC
 # ----
+# --
 #
-# var.3:EOC <- this line closes the comment
-RW:var.3:RANGE "min" "max"
+# Commands comments::
+# Comments binded to a particular command.
+# +
+# --
+# ----
+# # <command.name>:COMMENT
+# # <comment>
+# # ...
+# # <comment>
+# # <command.name>:EOC
+# ----
+# --
+#
+# Device comment::
+# A special comment to express general thougths about the whole device and to describe the way NUT supports it.
+# +
+# --
+# ----
+# # DEVICE:COMMENT
+# # <comment>
+# # ...
+# # <comment>
+# # DEVICE:EOC
+# ----
+# --
+#
+# Device support level::
+# Express on a 1 to 10 level how much you think the device is well supported in NUT.
+# +
+# --
+# ----
+# # DEVICE:SUPPORT-LEVEL:<support-level>
+# ----
+# --
+#
+# NDS version::
+# This is reserved to store the version of NDS this particular file belongs to.
+# +
+# --
+# ----
+# # NDS:VERSION:<version>
+# ----
+# --
+#
+# Note that the leading space is mandatory: each line must begin with a hash followed by a single space (`++$$# $$++'), all comments not following this syntax will either produce an error or be ignored.
+#
+# Multi-lines comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables... *not* sections).
+# Keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup.
+#
+# Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
+#
+# var.3:EOC
+# ^ closing line of var comment
+RW:var.3:RANGE:"1" "10"
 # Another ignored-everywhere comment
-RW:var.3:RANGE "min1" "max2"
+RW:var.3:RANGE:"15" "20"
 var.4: value
 var.5: value
-RW:var5:STRING:LEN
+RW:var.5:STRING:32
 var.6: value
-RW:var6:ENUM "value"
-RW:var6:ENUM "value2"
+RW:var.6:ENUM:"value"
+RW:var.6:ENUM:"value2"
 # Ignored comment; commands to follow
 CMD:command.1
 CMD:command.2
 # An ignored comment..
 CMD:command.3
-# CMD:command.3:COMMENT:
-# Just like vars comment ignored by dummy-ups but used by device dumps library generation
+# command comment to follow..
+# command.3:COMMENT:
 #
-# - _Still_ support *asciidoc*
-# - It'll be appended to the command
+# As in +.seq+ files, +.nds+ files can simulate/record power events and the like through the `++TIMER <seconds>++' instruction, e.g.:
+# ----
+# TIMER 300
+# ups.status: OB DISCHRG
+# TIMER 300
+# ups.status: OB LB DISCHRG
+# TIMER 60
+# ----
 #
-# CMD:command.3:EOC
+# In DDL generation, after `++TIMER <seconds>++' instruction, only comments are considered.
+#
+# command.3:EOC
+# ^ closing line of command comment
 CMD:command.4
-# DEVICE:USER-COMMENT:
-# Just like vars/commands comments but for the device/general annotations.
+
+TIMER 60
+
+var.1234567890: value
+
+# device comment to follow..
+# DEVICE:COMMENT:
+# Let's use this comment to explain vars/commands declaration.
+#
+# NUT variables are declared as:
+#
+# ----
+# <var.name>: <value>
+# ----
+#
+# RW variables are declared as:
+#
+# ----
+# RW:<var.name>:<type>:<options>
+# ----
+#
+# Where:
+#
+# [horizontal]
+# +<var.name>+::
+# Name of the RW variable.
+#
+# +<type>+::
+# Type of the RW variable +<var.name>+, one of *STRING*, *RANGE*, *ENUM*.
+#
+# +<options>+::
+# Options of +<type>+ for +<var.name>+, i.e.:
+# +
+# * if +<type>+ is *STRING*, maximum length of the settable string
+# +
+# ----
+# RW:<var.name>:STRING:<length>
+# ----
+# * if +<type>+ is *RANGE*, minimum and maximum settable value for the range, each one enclosed in quotes and separated by a space (+"<min>" "<max>"+)
+# +
+# ----
+# RW:<var.name>:RANGE:"<min>" "<max>"
+# ----
+# * if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes (+"<enumerated value>"+):
+# +
+# ----
+# RW:<var.name>:ENUM:"<enumerated value>"
+# ----
+#
+# Commands are declared as:
+#
+# ----
+# CMD:<command.name>
+# ----
 # DEVICE:EOC
-# We may even want to add a 'tell us how much the device is well-supported in NUT' (numbers, e.g. 1-10, then we can use stars if we want in the device dumps library generation)
+# ^ closing line of device comment
 # DEVICE:SUPPORT-LEVEL:6
+# ^ device support-level (1..10)
