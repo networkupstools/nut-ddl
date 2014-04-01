@@ -1,0 +1,74 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsuser/2009-August/005300.html
+battery.charge: 95.0
+battery.voltage: 27.00
+battery.voltage.nominal: 24.0
+driver.name: megatec
+driver.parameter.pollinterval: 2
+driver.parameter.port: /dev/ttyS1
+driver.version: 2.4.1
+driver.version.internal: 1.6
+input.frequency: 50.0
+input.frequency.nominal: 50.0
+input.voltage: 214.0
+input.voltage.fault: 140.0
+input.voltage.maximum: 238.5
+input.voltage.minimum: 206.5
+input.voltage.nominal: 230.0
+output.voltage: 248.0
+ups.beeper.status: disabled
+ups.delay.shutdown: 0
+ups.delay.start: 2
+ups.load: 30.0
+ups.mfr:
+ups.model:  IN01064B
+ups.serial: unknown
+ups.status: OL BOOST
+ups.temperature: 25.0
+# ups.temperature:COMMENT:
+# Not polled, always @ +25.0+
+# ups.temperature:EOC
+ups.type: standby
+#CMD:beeper.toggle
+# beeper.toggle:COMMENT:
+# Not working
+# beeper.toggle:EOC
+#CMD:load.off
+# load.off:COMMENT:
+# Not tested
+# load.off:EOC
+#CMD:load.on
+# load.on:COMMENT:
+# Not tested
+# load.on:EOC
+#CMD:reset.input.minmax
+# reset.input.minmax:COMMENT:
+# Not working
+# reset.input.minmax:EOC
+#CMD:reset.watchdog
+# reset.watchdog:COMMENT:
+# Not working
+# reset.watchdog:EOC
+#CMD:shutdown.return
+# shutdown.return:COMMENT:
+# Not tested
+# shutdown.return:EOC
+#CMD:shutdown.stayoff
+# shutdown.stayoff:COMMENT:
+# Not tested
+# shutdown.stayoff:EOC
+#CMD:shutdown.stop
+# shutdown.stop:COMMENT:
+# Not tested
+# shutdown.stop:EOC
+#CMD:test.battery.start
+# test.battery.start:COMMENT:
+# Not working
+# test.battery.start:EOC
+#CMD:test.battery.start.deep
+# test.battery.start.deep:COMMENT:
+# Not working
+# test.battery.start.deep:EOC
+#CMD:test.battery.stop
+# test.battery.stop:COMMENT:
+# Not working
+# test.battery.stop:EOC
