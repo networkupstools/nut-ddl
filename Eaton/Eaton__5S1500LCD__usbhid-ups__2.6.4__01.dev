@@ -1,9 +1,10 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsuser/2013-September/008617.html
 battery.charge: 100
 battery.charge.low: 20
 battery.runtime: 3515
 battery.type: PbAc
 device.mfr: EATON
-device.model: Ellipse PRO 1500 
+device.model: Ellipse PRO 1500
 device.serial: 0000000000
 device.type: ups
 driver.name: usbhid-ups
@@ -40,7 +41,7 @@ ups.delay.start: 30
 ups.firmware: 01.04.0012
 ups.load: 3
 ups.mfr: EATON
-ups.model: Ellipse PRO 1500 
+ups.model: Ellipse PRO 1500
 ups.power: 55
 ups.power.nominal: 1500
 ups.productid: ffff
