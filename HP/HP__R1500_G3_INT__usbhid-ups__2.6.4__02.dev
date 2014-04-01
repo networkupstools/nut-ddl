@@ -1,3 +1,4 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsuser/2013-August/008591.html
 battery.charge: 100
 battery.charge.low: 20
 battery.charge.warning: 20
@@ -46,3 +47,17 @@ ups.timer.reboot: -1
 ups.timer.shutdown: -1
 ups.timer.start: -1
 ups.vendorid: 03f0
+#RW:battery.charge.low:STRING
+# battery.charge.low:COMMENT:
+# The value doesn't change when set through 'upsrw'.
+# battery.charge.low:EOC
+#RW:input.transfer.high:STRING
+# input.transfer.high:COMMENT:
+# The value doesn't change when set through 'upsrw'.
+# input.transfer.high:EOC
+#RW:input.transfer.low:STRING
+# input.transfer.low:COMMENT:
+# The value doesn't change when set through 'upsrw'.
+# input.transfer.low:EOC
+#RW:ups.delay.shutdown:STRING
+#RW:ups.delay.start:STRING
