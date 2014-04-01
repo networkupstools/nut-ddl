@@ -1,3 +1,4 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsdev/2013-September/006526.html
 battery.capacity.nominal: 17.00
 battery.charge: 92.7
 battery.runtime: 420
@@ -7,7 +8,7 @@ battery.voltage.minimum: 40.00
 battery.voltage.nominal: 48.00
 device.mfr: unknown
 device.model: UPS 3000 VA FW -0026
-device.serial: E00xxxxx1
+device.serial: E00202401
 device.type: ups
 driver.name: upscode2
 driver.parameter.pollinterval: 2
@@ -39,5 +40,5 @@ ups.load: 60.6
 ups.mfr: unknown
 ups.model: UPS 3000 VA FW -0026
 ups.power.nominal: 3000.00
-ups.serial: E00xxxxx1
+ups.serial: E00202401
 ups.status: OL
