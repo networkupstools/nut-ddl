@@ -1,0 +1,68 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsuser/2008-May/004111.html
+battery.charge: 89.8
+battery.voltage: 11.50
+battery.voltage.nominal: 11.5
+driver.name: megatec_usb
+driver.parameter.battvolts: 0.0:12.8
+driver.parameter.mfr: Plexus
+driver.parameter.model: 500VA
+driver.parameter.pollinterval: 2
+driver.parameter.port: /dev/usb/hiddev0
+driver.parameter.vendorid: 0001
+driver.version: 2.2.1-
+driver.version.internal: 1.5.9
+input.frequency: 50.0
+input.voltage: 0.0
+input.voltage.fault: 165.0
+output.voltage: 230.0
+output.voltage.nominal: 230.0
+ups.beeper.status: disabled
+ups.delay.shutdown: 0
+ups.delay.start: 2
+ups.load: 100.0
+ups.mfr: Plexus
+ups.model: 500VA
+ups.serial: unknown
+ups.status: OB
+ups.temperature: 0.0
+#CMD:test.battery.start.deep
+# test.battery.start.deep:COMMENT:
+# Not working
+# test.battery.start.deep:EOC
+#CMD:test.battery.start
+# test.battery.start:COMMENT:
+# Not working
+# test.battery.start:EOC
+#CMD:test.battery.stop
+# test.battery.stop:COMMENT:
+# Not working
+# test.battery.stop:EOC
+#CMD:shutdown.return
+# shutdown.return:COMMENT:
+# Not working
+# shutdown.return:EOC
+#CMD:shutdown.stayoff
+# shutdown.stayoff:COMMENT:
+# Not working
+# shutdown.stayoff:EOC
+#CMD:shutdown.stop
+# shutdown.stop:COMMENT:
+# Not working
+# shutdown.stop:EOC
+#CMD:load.on
+# load.on:COMMENT:
+# Not working
+# load.on:EOC
+#CMD:load.off
+# load.off:COMMENT:
+# Not working
+# load.off:EOC
+#CMD:reset.input.minmax
+# reset.input.minmax:COMMENT:
+# Not tested
+# reset.input.minmax:EOC
+#CMD:reset.watchdog
+# reset.watchdog:COMMENT:
+# Not tested
+# reset.watchdog:EOC
+#CMD:beeper.toggle
