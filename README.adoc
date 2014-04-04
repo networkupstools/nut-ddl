@@ -59,7 +59,7 @@ Maintainers of this library should keep in mind that:
 
 * Spaces in file names and directories must be replaced by a single underscore (+_+)
 
-* At sign (+@+) is not allowed in the names of files and directories
+* At sign (+@+), dollar sign (+$+), double quotes (+"+) and parentheses are not allowed in the names of files and directories
 
 * Fields in file names are separated by two underscores (+__+)
 
@@ -82,6 +82,31 @@ So you can easily create definition files from an existing UPS using "+upsc > fi
 
 Comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
 Empty lines are ignored.
+
+[NOTE]
+====
+Though not used by device simulation tools, you can add to your file some commented lines with the <<basic-syntax,same format>> used by +.nds+ files to declare instant commands and RW variables (just preceed them with a single hash followed directly by the `markup', i.e. no spaces in-between): these lines will be useful when generating the online DDL.
+
+For RW variables:
+
+----
+#RW:<var.name>:<type>:<options>
+----
+
+Note that, since the length of RW *STRING* variables wasn't published by link:{nut-website-root}docs/man/upsrw.html['upsrw'] before 2.7.1, you can omit it and the preceeding colon, i.e:
+
+----
+#RW:<var.name>:STRING
+----
+
+For commands:
+
+----
+#CMD:<command.name>
+----
+
+You may want to add some comments as well, using the same format of +.nds+ files' <<comments,special comments>> (all but NDS version are supported), to complete your report.
+====
 
 To change a +.dev+ (static) to a +.seq+ (dynamic simulation), you have to change the suffix of the file, and to append the following kind of sequence, at the end of a file:
 
@@ -109,6 +134,7 @@ NDS files
 These files add support for instant commands, personalized RW variables and a way to express your comments/opinions/suggestions about each var/command or for the whole device.
 
 
+[[basic-syntax]]
 Basic syntax
 ~~~~~~~~~~~~
 
@@ -176,6 +202,7 @@ For more information, refer to NUT link:{nut-website-root}docs/developer-guide.c
 There is a whole chapter dedicated to data capture and simulation.
 
 
+[[comments]]
 Comments
 ~~~~~~~~
 
