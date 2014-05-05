@@ -23,31 +23,18 @@ ups.mfr:
 ups.model:  IN01064B
 ups.serial: unknown
 ups.status: OL BOOST
-ups.temperature: 25.0
-# ups.temperature:COMMENT:
-# Not polled, always @ +25.0+
-# ups.temperature:EOC
+ups.temperature: 25.0	#BAD: Not polled, always @ +25.0+
 ups.type: standby
-#CMD:beeper.toggle
-# beeper.toggle:COMMENT:
-# Not working
-# beeper.toggle:EOC
+#CMD:beeper.toggle	#BAD: Not working
 #CMD:load.off
-# load.off:COMMENT:
 # Not tested
 # load.off:EOC
 #CMD:load.on
 # load.on:COMMENT:
 # Not tested
 # load.on:EOC
-#CMD:reset.input.minmax
-# reset.input.minmax:COMMENT:
-# Not working
-# reset.input.minmax:EOC
-#CMD:reset.watchdog
-# reset.watchdog:COMMENT:
-# Not working
-# reset.watchdog:EOC
+#CMD:reset.input.minmax	#BAD: Not working
+#CMD:reset.watchdog	#BAD: Not working
 #CMD:shutdown.return
 # shutdown.return:COMMENT:
 # Not tested
@@ -60,15 +47,6 @@ ups.type: standby
 # shutdown.stop:COMMENT:
 # Not tested
 # shutdown.stop:EOC
-#CMD:test.battery.start
-# test.battery.start:COMMENT:
-# Not working
-# test.battery.start:EOC
-#CMD:test.battery.start.deep
-# test.battery.start.deep:COMMENT:
-# Not working
-# test.battery.start.deep:EOC
-#CMD:test.battery.stop
-# test.battery.stop:COMMENT:
-# Not working
-# test.battery.stop:EOC
+#CMD:test.battery.start	#BAD: Not working
+#CMD:test.battery.start.deep	#BAD: Not working
+#CMD:test.battery.stop	#BAD: Not working

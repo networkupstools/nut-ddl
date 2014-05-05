@@ -7,19 +7,10 @@ driver.parameter.type: KIN
 driver.parameter.validationSequence: {{11,0x4b},{8,0},{8,0}}
 driver.version: 2.4.1
 driver.version.internal: 0.12
-input.frequency: 80.12
-# input.frequency:COMMENT:
-# This should be +60+.
-# input.frequency:EOC
-input.voltage: 100.8
-# input.voltage:COMMENT:
-# The display on the front panel claims +124+ at the moment.
-# input.voltage:EOC
+input.frequency: 80.12	#BAD: This should be +60+.
+input.voltage: 100.8	#BAD: The display on the front panel claims +124+ at the moment.
 input.voltage.nominal: 120
-output.frequency: 80.12
-# output.frequency:COMMENT:
-# This should be +60+.
-# output.frequency:EOC
+output.frequency: 80.12	#BAD: This should be +60+.
 output.voltage: 100.8
 ups.load: 12.9
 ups.mfr: PowerCom

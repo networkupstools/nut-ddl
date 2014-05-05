@@ -24,9 +24,6 @@ ups.load: 4
 ups.mfr:
 ups.model:
 ups.status: OL
-ups.temperature: 25.0
-# ups.temperature:COMMENT:
-# Temperature never changes
-# ups.temperature:EOC
+ups.temperature: 25.0	#BAD: Temperature never changes
 ups.type: offline / line interactive
 

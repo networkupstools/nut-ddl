@@ -20,9 +20,6 @@ ups.delay.start: 180
 ups.load: 0
 ups.productid: 0002
 ups.status: OL BYPASS
-ups.temperature: 25.0
-# ups.temperature:COMMENT:
-# Temperature is always +25.0+ (°C).
-# ups.temperature:EOC
+ups.temperature: 25.0	#BAD: Temperature is always +25.0+ (°C).
 ups.type: offline / line interactive
 ups.vendorid: 06da

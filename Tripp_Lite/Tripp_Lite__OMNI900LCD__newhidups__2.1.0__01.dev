@@ -13,10 +13,7 @@ input.frequency: 59.9
 input.voltage: 119.0
 input.voltage.nominal: 120
 output.frequency.nominal: 60
-output.voltage: 166.0
-# output.voltage:COMMENT:
-# The output voltage is not reported correctly.
-# output.voltage:EOC
+output.voltage: 166.0	#BAD: The output voltage is not reported correctly.
 output.voltage.nominal: 120
 ups.beeper.status: enabled
 ups.delay.reboot: 65535

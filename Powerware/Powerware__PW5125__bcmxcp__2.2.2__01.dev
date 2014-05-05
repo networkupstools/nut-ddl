@@ -21,7 +21,7 @@ ups.load:  45.6
 ups.model: PW5125     1500VA
 ups.power.nominal: 1500
 ups.serial: UY044A0405
-ups.status: TRIM
+ups.status: TRIM	#BAD
 # ups.status:COMMENT:
 # Fixed in newer versions of NUT to include +OL+ with +BYPASS+, +BOOST+, +TRIM+.
 # ups.status:EOC

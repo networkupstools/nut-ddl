@@ -10,10 +10,7 @@ driver.version: 2.1.0
 driver.version.data: TrippLite HID 0.1 (experimental)
 driver.version.internal: 0.30
 input.frequency: 59.8
-input.voltage: 405.4
-# input.voltage:COMMENT:
-# The value is wrong.
-# input.voltage:EOC
+input.voltage: 405.4	#BAD: The value is wrong.
 input.voltage.nominal: 120
 ups.beeper.status: enabled
 ups.delay.reboot: 65535

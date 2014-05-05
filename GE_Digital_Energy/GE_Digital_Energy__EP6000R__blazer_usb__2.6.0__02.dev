@@ -24,30 +24,12 @@ ups.status: OL
 ups.temperature: 32.0
 ups.type: online
 ups.vendorid: 14f0
-#CMD:beeper.toggle
-# beeper.toggle:COMMENT:
-# Returns +OK+, but seems to have no effect
-# beeper.toggle:EOC
-#CMD:load.off
-# load.off:COMMENT:
-# Returns +OK+, but seems to have no effect
-# load.off:EOC
-#CMD:load.on
-# load.on:COMMENT:
-# Returns +OK+, but seems to have no effect
-# load.on:EOC
-#CMD:shutdown.return
-# shutdown.return:COMMENT:
-# Returns +OK+, but seems to have no effect
-# shutdown.return:EOC
-#CMD:shutdown.stayoff
-# shutdown.stayoff:COMMENT:
-# Returns +OK+, but seems to have no effect
-# shutdown.stayoff:EOC
-#CMD:shutdown.stop
-# shutdown.stop:COMMENT:
-# Returns +OK+, but seems to have no effect
-# shutdown.stop:EOC
+#CMD:beeper.toggle	#BAD: Returns +OK+, but seems to have no effect
+#CMD:load.off	#BAD: Returns +OK+, but seems to have no effect
+#CMD:load.on	#BAD: Returns +OK+, but seems to have no effect
+#CMD:shutdown.return	#BAD: Returns +OK+, but seems to have no effect
+#CMD:shutdown.stayoff	#BAD: Returns +OK+, but seems to have no effect
+#CMD:shutdown.stop	#BAD: Returns +OK+, but seems to have no effect
 #CMD:test.battery.start
 # test.battery.start:COMMENT:
 # Returns +OK+, starts a test, UPS status changes to +OL CAL+ (didn't wait for the test to finish)

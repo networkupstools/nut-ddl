@@ -23,10 +23,7 @@ ups.power.nominal: 3000
 ups.productid: ffff
 ups.realpower.nominal: 2700
 ups.serial: AQ2G1901J
-ups.status: OB
-# ups.status:COMMENT:
-# 'ups.status' is wrong; fixed in newer versions of NUT.
-# ups.status:EOC
+ups.status: OB	#BAD: 'ups.status' is wrong; fixed in newer versions of NUT.
 ups.test.interval: 604800
 ups.test.result: Done and passed
 ups.vendorid: 0463

@@ -1,13 +1,7 @@
 # http://lists.alioth.debian.org/pipermail/nut-upsuser/2014-February/008858.html
 battery.capacity: 7
-battery.charge: 255
-# battery.charge:COMMENT:
-# The value is not correct.
-# battery.charge:EOC
-battery.runtime: 3932100
-# battery.runtime:COMMENT:
-# The value is not correct.
-# battery.runtime:EOC
+battery.charge: 255	#BAD: The value is not correct.
+battery.runtime: 3932100	#BAD: The value is not correct.
 battery.voltage: 13.7
 battery.voltage.nominal: 12
 device.mfr: RPS S.p.a.
@@ -37,8 +31,5 @@ ups.productid: 5500
 ups.realpower.nominal: 480
 ups.serial:
 ups.status: OL
-ups.temperature: 255
-# ups.temperature:COMMENT:
-# The value is not correct.
-# ups.temperature:EOC
+ups.temperature: 255	#BAD: The value is not correct.
 ups.vendorid: 04b4

@@ -22,8 +22,5 @@ ups.load: 0.0
 ups.mfr: KEBO
 ups.model: UPS-650VA VER7.00
 ups.serial: unknown
-ups.status: OFF
-# ups.status:COMMENT:
-# 'ups.status' is always +OFF+; fixed in newer versions of NUT.
-# ups.status:EOC
+ups.status: OFF	#BAD: 'ups.status' is always +OFF+; fixed in newer versions of NUT.
 ups.temperature: 0.0

@@ -25,38 +25,14 @@ ups.model: 500VA
 ups.serial: unknown
 ups.status: OB
 ups.temperature: 0.0
-#CMD:test.battery.start.deep
-# test.battery.start.deep:COMMENT:
-# Not working
-# test.battery.start.deep:EOC
-#CMD:test.battery.start
-# test.battery.start:COMMENT:
-# Not working
-# test.battery.start:EOC
-#CMD:test.battery.stop
-# test.battery.stop:COMMENT:
-# Not working
-# test.battery.stop:EOC
-#CMD:shutdown.return
-# shutdown.return:COMMENT:
-# Not working
-# shutdown.return:EOC
-#CMD:shutdown.stayoff
-# shutdown.stayoff:COMMENT:
-# Not working
-# shutdown.stayoff:EOC
-#CMD:shutdown.stop
-# shutdown.stop:COMMENT:
-# Not working
-# shutdown.stop:EOC
-#CMD:load.on
-# load.on:COMMENT:
-# Not working
-# load.on:EOC
-#CMD:load.off
-# load.off:COMMENT:
-# Not working
-# load.off:EOC
+#CMD:test.battery.start.deep	#BAD: Not working
+#CMD:test.battery.start	#BAD: Not working
+#CMD:test.battery.stop	#BAD: Not working
+#CMD:shutdown.return	#BAD: Not working
+#CMD:shutdown.stayoff	#BAD: Not working
+#CMD:shutdown.stop	#BAD: Not working
+#CMD:load.on	#BAD: Not working
+#CMD:load.off	#BAD: Not working
 #CMD:reset.input.minmax
 # reset.input.minmax:COMMENT:
 # Not tested

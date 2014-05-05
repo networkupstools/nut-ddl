@@ -21,8 +21,5 @@ ups.load: 0.0
 ups.mfr:
 ups.model: UPS1000V VER1.04
 ups.serial: unknown
-ups.status: OFF
-# ups.status:COMMENT:
-# 'ups.status' is always +OFF+; fixed in newer versions of NUT.
-# ups.status:EOC
+ups.status: OFF	#BAD: 'ups.status' is always +OFF+; fixed in newer versions of NUT.
 ups.temperature: 0.0

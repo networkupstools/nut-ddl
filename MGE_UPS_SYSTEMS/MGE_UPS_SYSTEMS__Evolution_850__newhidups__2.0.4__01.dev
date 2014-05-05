@@ -33,10 +33,7 @@ outlet.2.switch: 1
 outlet.2.switchable: 1
 output.current: 0.40
 output.frequency: 50.0
-output.voltage: 0.0
-# output.voltage:COMMENT:
-# Wrong value; fixed in newer versions of NUT.
-# output.voltage:EOC
+output.voltage: 0.0	#BAD: Wrong value; fixed in newer versions of NUT.
 output.voltage.target.battery: 24.0
 output.voltage.target.line: 24.0
 ups.delay.shutdown: -1
