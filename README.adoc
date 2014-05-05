@@ -105,7 +105,15 @@ For commands:
 #CMD:<command.name>
 ----
 
-You may want to add some comments as well, using the same format of +.nds+ files' <<comments,special comments>> (all but NDS version are supported), to complete your report.
+You may want to add some comments as well, using the same format of +.nds+ files' <<comments,special comments>> (all but NDS version are supported), to complete your report or to <<report-a-bad-value,flag bad values>> (don't forget the leading hash in `RW` and `CMD` lines), i.e.:
+
+----
+<var.name>: <value>	#BAD
+#RW:<var.name>:STRING:<length>	#BAD: <reason>
+#RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
+#RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
+#CMD:<command.name> #BAD
+----
 ====
 
 To change a +.dev+ (static) to a +.seq+ (dynamic simulation), you have to change the suffix of the file, and to append the following kind of sequence, at the end of a file:
@@ -343,7 +351,24 @@ As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as
 # ====
 ----
 
-They will be retained and can be used to add vertical space or to separate blocks when needed; note that using an hash followed by a single space (`++$$# $$++') will produce the same effect.
+They will be retained and can be used to add vertical space or to separate blocks when needed; note that using a hash followed by a single space (`++$$# $$++') will produce the same effect.
 
 Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
+
+
+[[report-a-bad-value]]
+Report a bad value
+^^^^^^^^^^^^^^^^^^
+
+If certain values are not correctly reported, you can flag them with the special End Of Line comment `#BAD`, you can even add a short sentence (still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it, explaining the reason (e.g. `#BAD: unbelievably high value`, note that the colons are not mandatory).
+
+This kind of flags/comments is allowed (i.e. you can append it at the end of the line) in the declaration of variables, RW types/values and commands, i.e.:
+
+----
+<var.name>: <value>	#BAD
+RW:<var.name>:STRING:<length>	#BAD: <reason>
+RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
+RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
+CMD:<command.name> #BAD
+----
 endif::preamble-only[]
