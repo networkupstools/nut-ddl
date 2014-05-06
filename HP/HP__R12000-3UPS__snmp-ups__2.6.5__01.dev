@@ -1,3 +1,4 @@
+# http://lists.alioth.debian.org/pipermail/nut-upsuser/2012-October/008006.html
 # http://lists.alioth.debian.org/pipermail/nut-upsuser/2013-July/008494.html
 ambient.temperature: 21.0
 ambient.temperature.high: 0.00
@@ -31,8 +32,11 @@ ups.load: 28.00
 ups.mfr: Hewlett-Packard
 ups.model: HP R12000/3UPS
 ups.serial: P38900B9VVN0FK
-ups.status: OL DISCHRG OB
+ups.status: OL DISCHRG OB	#BAD: Actually the UPS is online.
 ups.test.result: Unknown
 ups.timer.shutdown: 0.00
 ups.timer.start: 0.00
-ups.type: norma
+ups.type: normal
+# DEVICE:COMMENT:
+# UPS fitted with an AF401A management card.
+# DEVICE:EOC
