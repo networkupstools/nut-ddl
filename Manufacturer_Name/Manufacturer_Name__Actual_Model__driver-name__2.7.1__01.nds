@@ -6,7 +6,7 @@
 	#..and again
 var.1: value
 var.2: value
-var.3: value
+var.3: value	#BAD: Let's try the `#BAD` End Of Line comment
 # While 'special' comments are used in DDL generation:
 # var.3:COMMENT:
 #
@@ -84,20 +84,24 @@ var.3: value
 #
 # var.3:EOC
 # ^ closing line of var comment
-RW:var.3:RANGE:"1" "10"
+RW:var.3:RANGE:"1" "10"	#BAD: Terse description of the reason
 # Another ignored-everywhere comment
 RW:var.3:RANGE:"15" "20"
-var.4: value
+RW:var.3:RANGE:"25" "30"	#BAD: Another description here about *this* range
+var.4: value	#BAD
 var.5: value
 RW:var.5:STRING:32
 var.6: value
-RW:var.6:ENUM:"value"
+RW:var.6:ENUM:"value"	#BAD
 RW:var.6:ENUM:"value2"
+var.7: value	#BAD
+var.8: value
+RW:var.8:STRING:64	#BAD: Still trying the `#BAD` comment
 # Ignored comment; commands to follow
-CMD:command.1
+CMD:command.1	#BAD
 CMD:command.2
 # An ignored comment..
-CMD:command.3
+CMD:command.3	#BAD: Explanation of why this command is flagges as 'BAD'
 # command comment to follow..
 # command.3:COMMENT:
 #
