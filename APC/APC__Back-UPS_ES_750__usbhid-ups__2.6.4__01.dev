@@ -4,10 +4,8 @@ battery.charge.low: 10
 battery.charge.warning: 50
 battery.date: 2001/09/25
 battery.mfr.date: 2008/01/25
-battery.runtime: 0
+battery.runtime: 0	#COMMENT: Need calibration.
 # battery.runtime:COMMENT:
-# Need calibration.
-#
 # .Notes on calibration
 # 1. It's important that the UPS is at 100% charge before starting the procedure; starting at lower will not work at all, not just produce inaccurate numbers.
 # +

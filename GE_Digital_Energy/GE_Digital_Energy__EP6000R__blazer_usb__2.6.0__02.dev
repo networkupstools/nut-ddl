@@ -30,22 +30,10 @@ ups.vendorid: 14f0
 #CMD:shutdown.return	#BAD: Returns +OK+, but seems to have no effect
 #CMD:shutdown.stayoff	#BAD: Returns +OK+, but seems to have no effect
 #CMD:shutdown.stop	#BAD: Returns +OK+, but seems to have no effect
-#CMD:test.battery.start
-# test.battery.start:COMMENT:
-# Returns +OK+, starts a test, UPS status changes to +OL CAL+ (didn't wait for the test to finish)
-# test.battery.start:EOC
-#CMD:test.battery.start.deep
-# test.battery.start.deep:COMMENT:
-# Returns +OK+, starts a test, UPS status changes to +OL CAL+ (didn't wait for the test to finish)
-# test.battery.start.deep:EOC
-#CMD:test.battery.start.quick
-# test.battery.start.quick:COMMENT:
-# Returns +OK+, starts a test, UPS status changes to +OL CAL+ for a short time
-# test.battery.start.quick:EOC
-#CMD:test.battery.stop
-# test.battery.stop:COMMENT:
-# Returns +OK+, stops a test, UPS status changes back to +OL+
-# test.battery.stop:EOC
+#CMD:test.battery.start	#COMMENT: Returns +OK+, starts a test, UPS status changes to +OL CAL+ (didn't wait for the test to finish)
+#CMD:test.battery.start.deep	#COMMENT: Returns +OK+, starts a test, UPS status changes to +OL CAL+ (didn't wait for the test to finish)
+#CMD:test.battery.start.quick	#COMMENT: Returns +OK+, starts a test, UPS status changes to +OL CAL+ for a short time
+#CMD:test.battery.stop	#COMMENT: Returns +OK+, stops a test, UPS status changes back to +OL+
 # DEVICE:COMMENT:
 # Issuing several 'test.battery.start*' commands without 'test.battery.stop' kills USB communication.
 # The UPS needs to be disconnected and re-connected to USB before communication can be re-established.

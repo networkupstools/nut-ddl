@@ -1,9 +1,6 @@
 # http://lists.alioth.debian.org/pipermail/nut-upsdev/2013-October/006544.html
 battery.charge: 100
-battery.runtime: 1000
-# battery.runtime:COMMENT:
-# Not reported by UPS (guesstimate)
-# battery.runtime:EOC
+battery.runtime: 1000	#COMMENT: Not reported by UPS (guesstimate)
 battery.voltage: 13.60
 battery.voltage.high: 13.00
 battery.voltage.low: 10.40
@@ -16,10 +13,7 @@ driver.parameter.idleload: 30
 driver.parameter.pollinterval: 5
 driver.parameter.port: auto
 driver.parameter.productid: 5161
-driver.parameter.runtimecal: 300,100,900,50
-# driver.parameter.runtimecal:COMMENT:
-# Guessed from device rating
-# driver.parameter.runtimecal:EOC
+driver.parameter.runtimecal: 300,100,900,50	#COMMENT: Guessed from device rating
 driver.parameter.vendorid: 0665
 driver.version: 2.6.4
 driver.version.internal: 0.08

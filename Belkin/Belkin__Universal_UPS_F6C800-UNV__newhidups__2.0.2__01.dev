@@ -15,10 +15,7 @@ input.frequency.nominal: 60
 input.sensitivity: reduced
 input.transfer.high: 136
 input.transfer.high.max: 0
-input.transfer.high.min: 1536
-# input.transfer.high.min:COMMENT:
-# This is a garbage value created by a previous crash of the UPS firmware - should be +0+.
-# input.transfer.high.min:EOC
+input.transfer.high.min: 1536	#COMMENT: This is a garbage value created by a previous crash of the UPS firmware - should be +0+.
 input.transfer.low: 90
 input.transfer.low.max: 0
 input.transfer.low.min: 0

@@ -33,12 +33,6 @@ ups.temperature: 0.0
 #CMD:shutdown.stop	#BAD: Not working
 #CMD:load.on	#BAD: Not working
 #CMD:load.off	#BAD: Not working
-#CMD:reset.input.minmax
-# reset.input.minmax:COMMENT:
-# Not tested
-# reset.input.minmax:EOC
-#CMD:reset.watchdog
-# reset.watchdog:COMMENT:
-# Not tested
-# reset.watchdog:EOC
+#CMD:reset.input.minmax	#COMMENT: Not tested
+#CMD:reset.watchdog	#COMMENT: Not tested
 #CMD:beeper.toggle
