@@ -18,6 +18,21 @@ var.3: value	#BAD: Let's try the `#BAD` End Of Line comment
 # In addition, +.nds+ files support some special comments, ignored by NUT's dummy-ups/whatever_will_replace_it but used by Devices Dumps Library generation tool.
 #
 # .'Special' comments:
+# End Of Line comments::
+# With the special End Of Line comment `#COMMENT: <comment>`, you can add a short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup) after the declaration of variables, RW types/values and commands, i.e.:
+# +
+# --
+# ----
+# <var.name>: <value>	#COMMENT: <comment>
+# RW:<var.name>:STRING:<length>	#COMMENT: <comment>
+# RW:<var.name>:RANGE:"<min>" "<max>" #COMMENT <comment>
+# RW:<var.name>:ENUM:"<enumerated value>"#COMMENT: <comment>
+# CMD:<command.name> #COMMENT: <comment>
+# ----
+#
+# Note that the colon after `#COMMENT` is not mandatory.
+# --
+#
 # Vars comments::
 # Comments that are binded to a particular variable.
 # +
@@ -82,6 +97,18 @@ var.3: value	#BAD: Let's try the `#BAD` End Of Line comment
 #
 # Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
 #
+# .Report a bad value
+# If certain values are not correctly reported, you can flag them with the special End Of Line comment `#BAD`, you can even add a short sentence (still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it, explaining the reason (e.g. `#BAD: unbelievably high value`, note that the colons are not mandatory).
+#
+# This kind of flags/comments is allowed (i.e. you can append it at the end of the line) in the declaration of variables, RW types/values and commands, i.e.:
+#
+# ----
+# <var.name>: <value>	#BAD
+# RW:<var.name>:STRING:<length>	#BAD: <reason>
+# RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
+# RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
+# CMD:<command.name> #BAD
+# ----
 # var.3:EOC
 # ^ closing line of var comment
 RW:var.3:RANGE:"1" "10"	#BAD: Terse description of the reason
@@ -94,8 +121,10 @@ RW:var.5:STRING:32
 var.6: value
 RW:var.6:ENUM:"value"	#BAD
 RW:var.6:ENUM:"value2"
+RW:var.6:ENUM:"value3"	#COMMENT: Another `#COMMENT: <comment>` here..
 var.7: value	#BAD
 var.8: value
+var.9: value	#COMMENT: Just trying the End Of Line `#COMMENT: <comment>` comment
 RW:var.8:STRING:64	#BAD: Still trying the `#BAD` comment
 # Ignored comment; commands to follow
 CMD:command.1	#BAD
@@ -119,6 +148,7 @@ CMD:command.3	#BAD: Explanation of why this command is flagges as 'BAD'
 # command.3:EOC
 # ^ closing line of command comment
 CMD:command.4
+CMD:command.5	#COMMENT: Yet another `#COMMENT: <comment>`
 
 TIMER 60
 
