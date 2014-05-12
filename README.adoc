@@ -342,8 +342,15 @@ e.g.:
 
 Note that the leading space is mandatory: each line must begin with a hash followed by a single space (`++$$# $$++'), all comments not following this syntax will either produce an error or be ignored.
 
-Multi-line comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables... *not* sections and labeled lists using two semi-colons, `;;`, as delimiter, while labeled lists delimited by two-four colons are allowed).
-Keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup, e.g., if you want to add a listing block, the comment should look like this:
+Multi-line comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables, ...).
+
+Note that the following AsciiDoc markup elements are *not* allowed:
+
+- sections
+- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists delimited by two-four colons are allowed)
+- open blocks directly at level 0 of the comment (you can use them as nested elements in other kinds of block)
+
+Also, keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup, e.g., if you want to add a listing block, the comment should look like this:
 
 ----
 # ----
