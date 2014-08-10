@@ -9,6 +9,9 @@ ifdef::env-github[]
 NUT Devices Dumps Library
 =========================
 :nut-website-root: http://www.networkupstools.org/
+:toc:
+:toclevels: 4
+:toc-placement: preamble
 endif::env-github[]
 
 ifndef::nut-website-root[]
