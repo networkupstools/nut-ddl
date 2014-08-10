@@ -77,44 +77,26 @@ Maintainers of this library should keep in mind that:
 DEV/SEQ files
 -------------
 
++.dev+ files provide a <<basic-syntax,simple mean>> to record your device and simulate it through the link:{nut-website-root}docs/man/dummy-ups.html[dummy-ups] driver.
+While +.seq+ files give you the possibility to <<dynamic-simulation,dynamically simulate>> power events and the like.
+
+In addition to that, users are invited to use them to report their experience with NUT to help improve support for their devices and help other users: to do so, you may want to add some <<special-comments,`special' comments>>, as well as a list of <<rw-variablesinstant-commands,available instant commands/RW variables>> to complete your report and to <<report-a-bad-value,flag bad values>>.
+
+
+[[basic-syntax]]
+Basic syntax
+~~~~~~~~~~~~
+
 +.dev+ files contain a list of all valid data and associated values of a specific device, and have the same format as an link:{nut-website-root}docs/man/upsc.html['upsc'] dump (+<var.name>: <value>+).
 So you can easily create definition files from an existing UPS using "+upsc > file.dev+".
 
-Comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
+<<comments,Comments>> are supported too.
 Empty lines are ignored.
 
-[NOTE]
-====
-Though not used by device simulation tools, you can add to your file some commented lines with the <<basic-syntax,same format>> used by +.nds+ files to declare instant commands and RW variables (just preceed them with a single hash followed directly by the `markup', i.e. no spaces in-between): these lines will be useful when generating the online DDL.
 
-For RW variables:
-
-----
-#RW:<var.name>:<type>:<options>
-----
-
-Note that, since the length of RW *STRING* variables wasn't published by link:{nut-website-root}docs/man/upsrw.html['upsrw'] before 2.7.1, you can omit it and the preceeding colon, i.e:
-
-----
-#RW:<var.name>:STRING
-----
-
-For commands:
-
-----
-#CMD:<command.name>
-----
-
-You may want to add some comments as well, using the same format of +.nds+ files' <<comments,special comments>> (all but NDS version are supported), to complete your report or to <<report-a-bad-value,flag bad values>> (don't forget the leading hash in `RW` and `CMD` lines), i.e.:
-
-----
-<var.name>: <value>	#BAD
-#RW:<var.name>:STRING:<length>	#BAD: <reason>
-#RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
-#RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
-#CMD:<command.name> #BAD
-----
-====
+[[dynamic-simulation]]
+Dynamic simulation
+~~~~~~~~~~~~~~~~~~
 
 To change a +.dev+ (static) to a +.seq+ (dynamic simulation), you have to change the suffix of the file, and to append the following kind of sequence, at the end of a file:
 
@@ -134,6 +116,240 @@ For more information, refer to NUT link:{nut-website-root}docs/developer-guide.c
 There is a whole chapter dedicated to data capture and simulation.
 
 
+[[comments]]
+Comments
+~~~~~~~~
+
+Comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
+
+
+[[rw-variablesinstant-commands]]
+RW variables/instant commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Though not used by device simulation tools, you can add to your file some commented lines to declare link:{nut-website-root}docs/man/upscmd.html[instant commands] and link:{nut-website-root}docs/man/upsrw.html[RW variables]: these lines will be useful when generating the online DDL.
+
+link:{nut-website-root}docs/man/upsrw.html[RW variables] are declared as:
+
+----
+#RW:<var.name>:<type>:<options>
+----
+
+Where:
+
+[horizontal]
++<var.name>+::
+Name of the RW variable.
+
++<type>+::
+Type of the RW variable +<var.name>+, one of *STRING*, *RANGE*, *ENUM*.
+
++<options>+::
+Options of +<type>+ for +<var.name>+, i.e.:
++
+* if +<type>+ is *STRING*, maximum length of the settable string
++
+--
+----
+#RW:<var.name>:STRING:<length>
+----
+
+Note that, since the length of RW *STRING* variables wasn't published by link:{nut-website-root}docs/man/upsrw.html['upsrw'] before 2.7.1, you can omit it and the preceeding colon, i.e:
+
+----
+#RW:<var.name>:STRING
+----
+--
+* if +<type>+ is *RANGE*, minimum and maximum settable value for the range, each one enclosed in quotes and separated by a space (+"<min>" "<max>"+)
++
+----
+#RW:<var.name>:RANGE:"<min>" "<max>"
+----
+* if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes (+"<enumerated value>"+):
++
+----
+#RW:<var.name>:ENUM:"<enumerated value>"
+----
+
+link:{nut-website-root}docs/man/upscmd.html[Commands] are declared as:
+
+----
+#CMD:<command.name>
+----
+
+
+[[special-comments]]
+Special comments
+^^^^^^^^^^^^^^^^
+
++.dev+/+.seq+ files support some special comments to express your comments/opinions/suggestions about each var/command or for the whole device:
+
+End Of Line comments::
+With the special End Of Line comment `#COMMENT: <comment>`, you can add a short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup) after the declaration of variables, RW types/values and commands, i.e.:
++
+--
+----
+<var.name>: <value>	#COMMENT: <comment>
+#RW:<var.name>:STRING:<length>	#COMMENT: <comment>
+#RW:<var.name>:RANGE:"<min>" "<max>" #COMMENT <comment>
+#RW:<var.name>:ENUM:"<enumerated value>"#COMMENT: <comment>
+#CMD:<command.name> #COMMENT: <comment>
+----
+
+(don't forget the leading hash in `RW` and `CMD` lines)
+
+Note that the colon after `#COMMENT` is not mandatory.
+--
+
+Vars comments::
+Comments that are binded to a particular variable.
++
+--
+----
+# <var.name>:COMMENT
+# <comment>
+# ...
+# <comment>
+# <var.name>:EOC
+----
+
+e.g.:
+
+----
+# battery.charge:COMMENT
+# The values reported by NUT are all bogus, I keep getting something like this:
+# 
+# ----
+# battery.charge: -1
+# battery.charge: -10
+# ----
+#
+# and so on..
+# 
+# Should I start farting rainbows or a whole universe where unicorns rule the world to get it working?
+# battery.charge:EOC
+----
+--
+
+Commands comments::
+Comments binded to a particular command.
++
+--
+----
+# <command.name>:COMMENT
+# <comment>
+# ...
+# <comment>
+# <command.name>:EOC
+----
+
+e.g.:
+
+----
+# shutdown.return:COMMENT
+# Why doesn't this command work?
+# 
+# For the Glory of Satan of course!
+# shutdown.return:EOC
+----
+--
+
+Device comment::
+A special comment to express general thougths about the whole device and to describe the way NUT supports it.
++
+--
+----
+# DEVICE:COMMENT
+# <comment>
+# ...
+# <comment>
+# DEVICE:EOC
+----
+
+e.g.:
+
+----
+# DEVICE:COMMENT
+# Bwah..
+# This device is supported so badly by NUT that I had to burn my office down to the ground..
+# _At least_ *now* I don't have to stand the taste of that coffee anymore..
+# DEVICE:EOC
+----
+--
+
+Device support level::
+Express on a 1 to 10 level how much you think the device is well supported in NUT.
++
+--
+----
+# DEVICE:SUPPORT-LEVEL:<support-level>
+----
+
+e.g.:
+
+----
+# DEVICE:SUPPORT-LEVEL:7
+----
+--
+
+Note that the leading space is mandatory: each line must begin with a hash followed by a single space (`++$$# $$++'), all comments not following this syntax will either produce an error or be ignored.
+
+Multi-line comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables, ...).
+
+Note that the following AsciiDoc markup elements are *not* allowed:
+
+- sections
+- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists delimited by two-four colons are allowed)
+- open blocks directly at level 0 of the comment (you can use them as nested elements in other kinds of block)
+
+Also, keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup, e.g., if you want to add a listing block, the comment should look like this:
+
+----
+# ----
+# The verbatim text start after the space
+# If a tab is needed, preceed it with a space:
+# 	<- a tab; remember to preceed it with a space otherwise it won't behave as expected
+#  \-/<- I don't know why, but I needed a space here at the beginning of the line, so i doubled it
+# ----
+----
+
+As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as in:
+
+----
+# ====
+# The previous line it's not empty (it starts an example block), so it needs a space.
+# Here's text and therefore a space preceed it..
+#
+#
+# ..while the two previous lines are empty, therefore a space is not needed after the hash
+# ====
+----
+
+They will be retained and can be used to add vertical space or to separate blocks when needed; note that using a hash followed by a single space (`++$$# $$++') will produce the same effect.
+
+Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
+
+
+[[report-a-bad-value]]
+Report a bad value
+^^^^^^^^^^^^^^^^^^
+
+If certain values are not correctly reported, you can flag them with the special End Of Line comment `#BAD`, you can even add a short sentence (still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it, explaining the reason (e.g. `#BAD: unbelievably high value`, note that the colons are not mandatory).
+
+This kind of flags/comments is allowed (i.e. you can append it at the end of the line) in the declaration of variables, RW types/values and commands, i.e.:
+
+----
+<var.name>: <value>	#BAD
+#RW:<var.name>:STRING:<length>	#BAD: <reason>
+#RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
+#RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
+#CMD:<command.name> #BAD
+----
+
+(don't forget the leading hash in `RW` and `CMD` lines)
+
+
+////
 NDS files
 ---------
 
@@ -369,7 +585,7 @@ As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as
 # Here's text and therefore a space preceed it..
 #
 #
-# ..while the two previous line are empty, therefore a space is not needed after the hash
+# ..while the two previous lines are empty, therefore a space is not needed after the hash
 # ====
 ----
 
@@ -393,4 +609,5 @@ RW:<var.name>:RANGE:"<min>" "<max>" #BAD: <reason>
 RW:<var.name>:ENUM:"<enumerated value>"#BAD: <reason>
 CMD:<command.name> #BAD
 ----
+////
 endif::preamble-only[]
