@@ -67,7 +67,7 @@ Maintainers of this library should keep in mind that:
 * Fields in file names are separated by two underscores (+__+)
 
 * +<report-number>+ is the progressive number of reports available for a device limited to a version of NUT (also if the driver, +<driver-name>+, is different from one report to another), i.e. for each device:
-** every report being the first one for a paricular version of NUT must have a report number equal to +01+.
+** every report being the first one for a particular version of NUT must have a report number equal to +01+.
 ** every report still in the same version number must increase the report number also if the driver is not the same as the other ones
 
 * +.seq+ files generated from a specific +.dev+ file must have the same name of the +.dev+ file, e.g.:
