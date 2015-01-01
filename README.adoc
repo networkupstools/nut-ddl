@@ -209,17 +209,19 @@ Comments that are binded to a particular variable.
 +
 --
 ----
-# <var.name>:COMMENT
+# <var.name>:COMMENT:
 # <comment>
 # ...
 # <comment>
 # <var.name>:EOC
 ----
 
+(The trailing colon after `:COMMENT` is not mandatory.)
+
 e.g.:
 
 ----
-# battery.charge:COMMENT
+# battery.charge:COMMENT:
 # The values reported by NUT are all bogus, I keep getting something like this:
 # 
 # ----
@@ -239,12 +241,14 @@ Comments binded to a particular command.
 +
 --
 ----
-# <command.name>:COMMENT
+# <command.name>:COMMENT:
 # <comment>
 # ...
 # <comment>
 # <command.name>:EOC
 ----
+
+(The trailing colon after `:COMMENT` is not mandatory.)
 
 e.g.:
 
@@ -262,12 +266,14 @@ A special comment to express general thougths about the whole device and to desc
 +
 --
 ----
-# DEVICE:COMMENT
+# DEVICE:COMMENT:
 # <comment>
 # ...
 # <comment>
 # DEVICE:EOC
 ----
+
+(The trailing colon after `:COMMENT` is not mandatory.)
 
 e.g.:
 
@@ -458,17 +464,19 @@ Comments that are binded to a particular variable.
 +
 --
 ----
-# <var.name>:COMMENT
+# <var.name>:COMMENT:
 # <comment>
 # ...
 # <comment>
 # <var.name>:EOC
 ----
 
+(The trailing colon after `:COMMENT` is not mandatory.)
+
 e.g.:
 
 ----
-# battery.charge:COMMENT
+# battery.charge:COMMENT:
 # The values reported by NUT are all bogus, I keep getting something like this:
 # 
 # ----
@@ -488,12 +496,14 @@ Comments binded to a particular command.
 +
 --
 ----
-# <command.name>:COMMENT
+# <command.name>:COMMENT:
 # <comment>
 # ...
 # <comment>
 # <command.name>:EOC
 ----
+
+(The trailing colon after `:COMMENT` is not mandatory.)
 
 e.g.:
 
@@ -511,12 +521,14 @@ A special comment to express general thougths about the whole device and to desc
 +
 --
 ----
-# DEVICE:COMMENT
+# DEVICE:COMMENT:
 # <comment>
 # ...
 # <comment>
 # DEVICE:EOC
 ----
+
+(The trailing colon after `:COMMENT` is not mandatory.)
 
 e.g.:
 
