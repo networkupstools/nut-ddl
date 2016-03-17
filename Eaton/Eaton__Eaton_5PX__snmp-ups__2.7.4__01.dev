@@ -7,11 +7,11 @@ battery.runtime.low: 180.00
 battery.voltage: 52.00
 device.mfr: Eaton
 device.model: Eaton 5PX
-device.serial: G094D43072
+device.serial: XXXXXXXXXX
 device.type: ups
 driver.name: snmp-ups
 driver.parameter.pollinterval: 2
-driver.parameter.port: 10.130.6.26
+driver.parameter.port: XX.XX.XX.XX
 driver.parameter.synchronous: no
 driver.version: 2.7.4
 driver.version.data: mge MIB 0.5
@@ -32,7 +32,7 @@ ups.firmware.aux: JI
 ups.load: 33.00
 ups.mfr: Eaton
 ups.model: Eaton 5PX
-ups.serial: G094D43072
+ups.serial: XXXXXXXXXX
 ups.start.auto: yes
 ups.status: OL
 ups.test.result: done and passed

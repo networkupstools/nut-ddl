@@ -7,12 +7,12 @@ battery.runtime.low: 180.00
 battery.voltage: 52.00
 device.mfr: EATON
 device.model: Eaton 5PX 1500
-device.serial: ID: G094D43072 , Msg: 5PX1500iRT
+device.serial: ID: XXXXXXXXXX , Msg: 5PX1500iRT
 device.type: ups
 driver.name: snmp-ups
 driver.parameter.mibs: pw
 driver.parameter.pollinterval: 2
-driver.parameter.port: 10.130.6.26
+driver.parameter.port: XX.XX.XX.XX
 driver.parameter.synchronous: no
 driver.version: 2.7.4
 driver.version.data: pw MIB 0.88
@@ -38,7 +38,7 @@ ups.model: Eaton 5PX 1500
 ups.power: 324.00
 ups.power.nominal: 1500.00
 ups.realpower.nominal: 1350.00
-ups.serial: ID: G094D43072 , Msg: 5PX1500iRT
+ups.serial: ID: XXXXXXXXXX , Msg: 5PX1500iRT
 ups.start.auto: yes
 ups.status: OL
 ups.temperature: 0.00
