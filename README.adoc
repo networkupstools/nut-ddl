@@ -62,7 +62,7 @@ Maintainers of this library should keep in mind that:
 
 * Spaces in file names and directories must be replaced by a single underscore (+_+)
 
-* At sign (+@+), dollar sign (+$+), double quotes (+"+) and parentheses are not allowed in the names of files and directories
+* At sign (+@+), dollar sign (+$+), double quotes (+"+), colons (+:+) and parentheses are not allowed in the names of files and directories
 
 * Fields in file names are separated by two underscores (+__+)
 
