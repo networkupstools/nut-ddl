@@ -14,7 +14,7 @@ device.serial: 5A1516T15268
 device.type: ats
 driver.name: snmp-ups
 driver.parameter.pollinterval: 2
-driver.parameter.port: 10.239.1.250
+driver.parameter.port: xx.xx.xx.xx
 driver.parameter.synchronous: no
 driver.version: 2.7.4.1
 driver.version.data: apc_ats MIB 0.2
