@@ -1,0 +1,18 @@
+# Travis CI script
+
+language:
+- c
+
+os:
+- linux
+
+sudo: false
+
+# Builds with customized setups
+env:
+  matrix:
+    - BUILD_TYPE=sanitycheck
+
+# Hand off to generated script for each BUILD_TYPE
+script: ./ci_build.sh
+
