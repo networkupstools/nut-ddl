@@ -26,7 +26,7 @@ driver.version.data: CyberPower HID 0.4
 driver.version.internal: 0.41
 input.voltage: 121.0
 input.voltage.nominal: 120
-output.voltage: 137.0
+output.voltage: 137.0	#BAD
 ups.beeper.status: enabled
 ups.delay.shutdown: 20
 ups.delay.start: 30
@@ -57,4 +57,7 @@ ups.vendorid: 0764
 #CMD:test.battery.start.deep
 #CMD:test.battery.start.quick
 #CMD:test.battery.stop
-
+#RW:battery.charge.low:STRING:10
+#RW:battery.runtime.low:STRING:10
+#RW:ups.delay.shutdown:STRING:10
+#RW:ups.delay.start:STRING:10
