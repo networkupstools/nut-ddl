@@ -26,7 +26,7 @@ driver.version.data: CyberPower HID 0.4
 driver.version.internal: 0.41
 input.voltage: 121.0
 input.voltage.nominal: 120
-output.voltage: 137.0	#BAD
+output.voltage: 137.0	#BAD: Might be https://github.com/networkupstools/nut/issues/439
 ups.beeper.status: enabled
 ups.delay.shutdown: 20
 ups.delay.start: 30
