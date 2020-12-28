@@ -1,6 +1,7 @@
 # Source: https://github.com/networkupstools/nut/issues/552
+# Vendor: https://www.cyberpower.com/eu/en/product/sku/BR1000ELCD
 battery.charge: 100
-battery.charge.low: 10	#COMMENT: marked as read/write, but NUT cannot set this value
+battery.charge.low: 10	#COMMENT: (marked as read/write, but value does not change after setting with NUT upsrw command)
 battery.charge.warning: 20
 battery.mfr.date: CPS	#BAD: https://github.com/networkupstools/nut/issues/437
 battery.runtime: 7200
