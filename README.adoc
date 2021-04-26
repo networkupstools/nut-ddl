@@ -1,14 +1,17 @@
 ////
 NOTE:
 - 'env-github' attribute is set on GitHub
-- 'preamble-only' attribute is set in DDL generation to include only the preamble and unset to exclude it
-- 'nut-website-root' attribute point to the root of the website, either as a relative path (for DDL generation) or as the URL of the website (for GitHub)
+- 'preamble-only' attribute is set in DDL generation to include only the
+  preamble and unset to exclude it
+- 'nut-website-root' attribute point to the root of the website, either
+  as a relative path (for DDL generation) or as the URL of the website
+  (for GitHub)
 ////
 
 ifdef::env-github[]
 NUT Devices Dumps Library
 =========================
-:nut-website-root: http://www.networkupstools.org/
+:nut-website-root: https://www.networkupstools.org/
 :toc:
 :toclevels: 4
 :toc-placement: preamble
@@ -19,18 +22,22 @@ ifndef::nut-website-root[]
 endif::nut-website-root[]
 
 ifdef::env-github,preamble-only[]
-This library provides link:{nut-website-root}docs/man/upsc.html['upsc'] dumps for
+This library provides link:{nut-website-root}docs/man/upsc.html['upsc'] styled
+data dumps for
 ifndef::env-github[<<_supported_devices,various hardware supported by NUT>>,]
 ifdef::env-github[various hardware supported by NUT,]
 with two principal aims:
 
 DDL for users::
-NUT DDL complements NUT link:{nut-website-root}stable-hcl.html[hardware compatibility list] and provides more detailed information to users on how
+NUT DDL complements NUT
+link:{nut-website-root}stable-hcl.html[hardware compatibility list]
+and provides more detailed information to users on how
 ifndef::env-github[<<_supported_devices,devices are supported>>.]
 ifdef::env-github[devices are supported.]
 
 DDL for developers::
-NUT DDL provides base simulation data to the link:{nut-website-root}docs/man/dummy-ups.html[dummy-ups] driver.
+NUT DDL provides base simulation data to the
+link:{nut-website-root}docs/man/dummy-ups.html[dummy-ups] driver.
 endif::env-github,preamble-only[]
 
 
@@ -60,17 +67,26 @@ Maintainers of this library should keep in mind that:
 ** +<manufacturer-1>/<dump-1>+..+<dump-n>+
 ** +<manufacturer-n>/<dump-1>+..+<dump-n>+
 
-* Spaces in file names and directories must be replaced by a single underscore (+_+)
+* Spaces in file names and directories must be replaced by a single
+  underscore (+_+)
 
-* At sign (+@+), dollar sign (+$+), double quotes (+"+), colons (+:+) and parentheses are not allowed in the names of files and directories
+* At sign (+@+), dollar sign (+$+), double quotes (+"+), colons (+:+)
+  and parentheses are not allowed in the names of files and directories
 
 * Fields in file names are separated by two underscores (+__+)
 
-* +<report-number>+ is the progressive number of reports available for a device limited to a version of NUT (also if the driver, +<driver-name>+, is different from one report to another), i.e. for each device:
-** every report being the first one for a particular version of NUT must have a report number equal to +01+.
-** every report still in the same version number must increase the report number also if the driver is not the same as the other ones
+* +<report-number>+ is the progressive number of reports available for a
+  device limited to a version of NUT (also if the driver, +<driver-name>+,
+  is different from one report to another), i.e. for each device:
 
-* +.seq+ files generated from a specific +.dev+ file must have the same name of the +.dev+ file, e.g.:
+** every report being the first one for a particular version of NUT must
+   have a report number equal to +01+.
+
+** every report still in the same version number must increase the report
+   number also if the driver is not the same as the other ones
+
+* +.seq+ files generated from a specific +.dev+ file must have the same
+  name of the +.dev+ file, e.g.:
 +
 	Dell__UPS_Tower_1920W_HV__snmp-ups__2.6.0__01.dev
 	Dell__UPS_Tower_1920W_HV__snmp-ups__2.6.0__01.seq
@@ -80,18 +96,29 @@ Maintainers of this library should keep in mind that:
 DEV/SEQ files
 -------------
 
-+.dev+ files provide a <<basic-syntax,simple mean>> to record your device and simulate it through the link:{nut-website-root}docs/man/dummy-ups.html[dummy-ups] driver.
-While +.seq+ files give you the possibility to <<dynamic-simulation,dynamically simulate>> power events and the like.
+The +.dev+ files provide a <<basic-syntax,simple mean>> to record a snapshot
+of your device state and simulate it through the
+link:{nut-website-root}docs/man/dummy-ups.html[dummy-ups] NUT driver, while
+the +.seq+ files give you the possibility to
+<<dynamic-simulation,dynamically simulate>> power events and the like.
 
-In addition to that, users are invited to use them to report their experience with NUT to help improve support for their devices and help other users: to do so, you may want to add some <<special-comments,`special' comments>>, as well as a list of <<rw-variablesinstant-commands,available instant commands/RW variables>> to complete your report and to <<report-a-bad-value,flag bad values>>.
+In addition to that, users are invited to use them to report their experience
+with NUT to help improve support for their devices and help other users:
+to do so, you may want to add some <<special-comments,`special' comments>>,
+as well as a list of
+<<rw-variablesinstant-commands,available instant commands/RW variables>>
+to complete your report and to <<report-a-bad-value,flag bad values>>.
 
 
 [[basic-syntax]]
 Basic syntax
 ~~~~~~~~~~~~
 
-+.dev+ files contain a list of all valid data and associated values of a specific device, and have the same format as an link:{nut-website-root}docs/man/upsc.html['upsc'] dump (+<var.name>: <value>+).
-So you can easily create definition files from an existing UPS using "+upsc > file.dev+".
+The +.dev+ files contain a list of all valid data and associated values of
+a specific device, and have the same format as an
+link:{nut-website-root}docs/man/upsc.html['upsc'] dump (+<var.name>: <value>+).
+So you can easily create definition files on your NUT system from an existing
+UPS or another power device, using "+upsc > file.dev+".
 
 <<comments,Comments>> are supported too.
 Empty lines are ignored.
@@ -101,7 +128,9 @@ Empty lines are ignored.
 Dynamic simulation
 ~~~~~~~~~~~~~~~~~~
 
-To change a +.dev+ (static) to a +.seq+ (dynamic simulation), you have to change the suffix of the file, and to append the following kind of sequence, at the end of a file:
+To change a +.dev+ (static) to a +.seq+ (dynamic simulation), you have to
+change the suffix of the file, and to append the following kind of sequence,
+at the end of a file:
 
 ----
 TIMER 300
@@ -111,11 +140,15 @@ ups.status: OB LB DISCHRG
 TIMER 60
 ----
 
-Here, we wait 5 minutes with the initial content, then generate a power failure (switch On Battery).
-We wait 5 more minutes before reaching the battery low level.
-We wait again 1 minute, and then loop at the beginning of the file, resetting the power status to Online.
+Here, we:
+* wait 5 minutes with the initial content, then
+* generate a power failure (switch On Battery)
+* We wait 5 more minutes before reaching the battery low level.
+* We wait again 1 minute, and then
+* loop at the beginning of the file, resetting the power status to Online.
 
-For more information, refer to NUT link:{nut-website-root}docs/developer-guide.chunked/index.html[Developer Guide].
+For more information, refer to NUT
+link:{nut-website-root}docs/developer-guide.chunked/index.html[Developer Guide].
 There is a whole chapter dedicated to data capture and simulation.
 
 
@@ -123,16 +156,21 @@ There is a whole chapter dedicated to data capture and simulation.
 Comments
 ~~~~~~~~
 
-Comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
+Comments are allowed as lines preceeded by a hash (++#++), and as lines with
+spaces followed by a hash (`++$$   # <comment>$$++').
 
 
 [[rw-variablesinstant-commands]]
 RW variables/instant commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Though not used by device simulation tools, you can add to your file some commented lines to declare link:{nut-website-root}docs/man/upscmd.html[instant commands] and link:{nut-website-root}docs/man/upsrw.html[RW variables]: these lines will be useful when generating the online DDL.
+Though not used by device simulation tools, you can add to your file some
+commented lines to declare
+link:{nut-website-root}docs/man/upscmd.html[instant commands] and
+link:{nut-website-root}docs/man/upsrw.html[RW variables]: these lines will
+be useful when generating the online DDL.
 
-link:{nut-website-root}docs/man/upsrw.html[RW variables] are declared as:
+The link:{nut-website-root}docs/man/upsrw.html[RW variables] are declared as:
 
 ----
 #RW:<var.name>:<type>:<options>
@@ -157,18 +195,22 @@ Options of +<type>+ for +<var.name>+, i.e.:
 #RW:<var.name>:STRING:<length>
 ----
 
-Note that, since the length of RW *STRING* variables wasn't published by link:{nut-website-root}docs/man/upsrw.html['upsrw'] before 2.7.1, you can omit it and the preceeding colon, i.e:
+Note that, since the length of RW *STRING* variables wasn't published by
+link:{nut-website-root}docs/man/upsrw.html['upsrw'] before 2.7.1, you can
+omit it and the preceeding colon, i.e:
 
 ----
 #RW:<var.name>:STRING
 ----
 --
-* if +<type>+ is *RANGE*, minimum and maximum settable value for the range, each one enclosed in quotes and separated by a space (+"<min>" "<max>"+)
+* if +<type>+ is *RANGE*, minimum and maximum settable value for the range,
+  each one enclosed in quotes and separated by a space (+"<min>" "<max>"+):
 +
 ----
 #RW:<var.name>:RANGE:"<min>" "<max>"
 ----
-* if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes (+"<enumerated value>"+):
+* if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes
+  (+"<enumerated value>"+):
 +
 ----
 #RW:<var.name>:ENUM:"<enumerated value>"
@@ -185,10 +227,14 @@ link:{nut-website-root}docs/man/upscmd.html[Commands] are declared as:
 Special comments
 ^^^^^^^^^^^^^^^^
 
-+.dev+/+.seq+ files support some special comments to express your comments/opinions/suggestions about each var/command or for the whole device:
++.dev+/+.seq+ files support some special comments to express your
+comments/opinions/suggestions about each var/command or for the whole
+device:
 
 End Of Line comments::
-With the special End Of Line comment `#COMMENT: <comment>`, you can add a short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup) after the declaration of variables, RW types/values and commands, i.e.:
+With the special End Of Line comment `#COMMENT: <comment>`, you can add a
+short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup)
+after the declaration of variables, RW types/values and commands, i.e.:
 +
 --
 ----
@@ -231,7 +277,7 @@ e.g.:
 #
 # and so on..
 # 
-# Should I start farting rainbows or a whole universe where unicorns rule the world to get it working?
+# Should I start finding rainbows or a whole universe where unicorns rule the world to get it working?
 # battery.charge:EOC
 ----
 --
@@ -256,13 +302,14 @@ e.g.:
 # shutdown.return:COMMENT
 # Why doesn't this command work?
 # 
-# For the Glory of Satan of course!
+# For my continued misery of course!
 # shutdown.return:EOC
 ----
 --
 
 Device comment::
-A special comment to express general thougths about the whole device and to describe the way NUT supports it.
+A special comment to express general thoughts about the whole device and
+to describe the way NUT supports it.
 +
 --
 ----
@@ -287,7 +334,8 @@ e.g.:
 --
 
 Device support level::
-Express on a 1 to 10 level how much you think the device is well supported in NUT.
+Express on a scale of 1 to 10 how much you think the device is well supported
+by NUT.
 +
 --
 ----
@@ -301,17 +349,25 @@ e.g.:
 ----
 --
 
-Note that the leading space is mandatory: each line must begin with a hash followed by a single space (`++$$# $$++'), all comments not following this syntax will either produce an error or be ignored.
+Note that the leading space is mandatory: each line must begin with a hash
+followed by a single space (`++$$# $$++'), all comments not following this
+syntax will either produce an error or be ignored.
 
-Multi-line comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables, ...).
+Multi-line comments (vars, commands, device) support
+http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists,
+tables, ...).
 
 Note that the following AsciiDoc markup elements are *not* allowed:
 
 - sections
-- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists delimited by two-four colons are allowed)
-- open blocks directly at level 0 of the comment (you can use them as nested elements in other kinds of block)
+- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists
+  delimited by two-four colons are allowed)
+- open blocks directly at level 0 of the comment (you can use them as
+  nested elements in other kinds of block)
 
-Also, keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup, e.g., if you want to add a listing block, the comment should look like this:
+Also, keep in mind that the leading space will always be removed and
+therefore you shouldn't consider it in your AsciiDoc markup, e.g.,
+if you want to add a listing block, the comment should look like this:
 
 ----
 # ----
@@ -322,7 +378,8 @@ Also, keep in mind that the leading space will always be removed and therefore y
 # ----
 ----
 
-As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as in:
+As an exception it's allowed to use empty commented lines (`++$$#$$++'),
+such as in:
 
 ----
 # ====
@@ -334,18 +391,28 @@ As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as
 # ====
 ----
 
-They will be retained and can be used to add vertical space or to separate blocks when needed; note that using a hash followed by a single space (`++$$# $$++') will produce the same effect.
+They will be retained and can be used to add vertical space or to separate
+blocks when needed; note that using a hash followed by a single space
+(`++$$# $$++') will produce the same effect.
 
-Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
+Also note that empty lines, comments without the required leading space
+after the hash and lines with spaces preceeding a hash will 'break'
+multi-line comments.
 
 
 [[report-a-bad-value]]
 Report a bad value
 ^^^^^^^^^^^^^^^^^^
 
-If certain values are not correctly reported, you can flag them with the special End Of Line comment `#BAD`, you can even add a short sentence (still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it, explaining the reason (e.g. `#BAD: unbelievably high value`, note that the colons are not mandatory).
+If certain values are not correctly reported, you can flag them with the
+special End Of Line comment `#BAD`, you can even add a short sentence
+(still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it,
+explaining the reason (e.g. `#BAD: unbelievably high value`, note that
+the colons are not mandatory).
 
-This kind of flags/comments is allowed (i.e. you can append it at the end of the line) in the declaration of variables, RW types/values and commands, i.e.:
+This kind of flags/comments is allowed (i.e. you can append it at the
+end of the line) in the declaration of variables, RW types/values and
+commands, i.e.:
 
 ----
 <var.name>: <value>	#BAD
@@ -362,16 +429,20 @@ This kind of flags/comments is allowed (i.e. you can append it at the end of the
 NDS files
 ---------
 
-**N**UT **D**evice **S**imulation files (+.nds+) are meant to be the next version of <<devseq-files,+.dev+/+.seq+ files>>.
+**N**UT **D**evice **S**imulation files (+.nds+) are meant to be the next
+version of <<devseq-files,+.dev+/+.seq+ files>>.
 
-These files add support for instant commands, personalized RW variables and a way to express your comments/opinions/suggestions about each var/command or for the whole device.
+These files add support for instant commands, personalized RW variables
+and a way to express your comments/opinions/suggestions about each
+var/command or for the whole device.
 
 
 [[basic-syntax]]
 Basic syntax
 ~~~~~~~~~~~~
 
-Just like in <<devseq-files,+.dev+/+.seq+ files>>, NUT variables are declared as:
+Just like in <<devseq-files,+.dev+/+.seq+ files>>, NUT variables are
+declared as:
 
 ----
 <var.name>: <value>
@@ -400,12 +471,14 @@ Options of +<type>+ for +<var.name>+, i.e.:
 ----
 RW:<var.name>:STRING:<length>
 ----
-* if +<type>+ is *RANGE*, minimum and maximum settable value for the range, each one enclosed in quotes and separated by a space (+"<min>" "<max>"+)
+* if +<type>+ is *RANGE*, minimum and maximum settable value for the range,
+  each one enclosed in quotes and separated by a space (+"<min>" "<max>"+):
 +
 ----
 RW:<var.name>:RANGE:"<min>" "<max>"
 ----
-* if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes (+"<enumerated value>"+):
+* if +<type>+ is *ENUM*, settable enumerated value, enclosed in quotes
+  (+"<enumerated value>"+):
 +
 ----
 RW:<var.name>:ENUM:"<enumerated value>"
@@ -421,7 +494,8 @@ CMD:<command.name>
 Dynamic simulation
 ~~~~~~~~~~~~~~~~~~
 
-As in <<devseq-files,+.seq+ files>>, +.nds+ files can simulate/record power events and the like through the `++TIMER <seconds>++' instruction, e.g.:
+As in <<devseq-files,+.seq+ files>>, +.nds+ files can simulate/record power
+events and the like through the `++TIMER <seconds>++' instruction, e.g.:
 
 ----
 TIMER 300
@@ -431,7 +505,8 @@ ups.status: OB LB DISCHRG
 TIMER 60
 ----
 
-For more information, refer to NUT link:{nut-website-root}docs/developer-guide.chunked/index.html[Developer Guide].
+For more information, refer to NUT
+link:{nut-website-root}docs/developer-guide.chunked/index.html[Developer Guide].
 There is a whole chapter dedicated to data capture and simulation.
 
 
@@ -439,13 +514,17 @@ There is a whole chapter dedicated to data capture and simulation.
 Comments
 ~~~~~~~~
 
-Like in <<devseq-files,+.dev+/+.seq+ files>>, comments are allowed as lines preceeded by a hash (++#++), and as lines with spaces followed by a hash (`++$$   # <comment>$$++').
+Like in <<devseq-files,+.dev+/+.seq+ files>>, comments are allowed as lines
+preceeded by a hash (++#++), and as lines with spaces followed by a hash
+(`++$$   # <comment>$$++').
 Empty lines are ignored.
 
 In addition, +.nds+ files support some special comments:
 
 End Of Line comments::
-With the special End Of Line comment `#COMMENT: <comment>`, you can add a short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup) after the declaration of variables, RW types/values and commands, i.e.:
+With the special End Of Line comment `#COMMENT: <comment>`, you can add a
+short sentence (supporting http://asciidoc.org/[AsciiDoc] inline markup)
+after the declaration of variables, RW types/values and commands, i.e.:
 +
 --
 ----
@@ -486,7 +565,7 @@ e.g.:
 #
 # and so on..
 # 
-# Should I start farting rainbows or a whole universe where unicorns rule the world to get it working?
+# Should I start finding rainbows or a whole universe where unicorns rule the world to get it working?
 # battery.charge:EOC
 ----
 --
@@ -511,13 +590,14 @@ e.g.:
 # shutdown.return:COMMENT
 # Why doesn't this command work?
 # 
-# For the Glory of Satan of course!
+# For my continued misery of course!
 # shutdown.return:EOC
 ----
 --
 
 Device comment::
-A special comment to express general thougths about the whole device and to describe the way NUT supports it.
+A special comment to express general thoughts about the whole device and
+to describe the way NUT supports it.
 +
 --
 ----
@@ -542,7 +622,8 @@ e.g.:
 --
 
 Device support level::
-Express on a 1 to 10 level how much you think the device is well supported in NUT.
+Express on a scale of 1 to 10 how much you think the device is well supported
+by NUT.
 +
 --
 ----
@@ -571,17 +652,25 @@ e.g.:
 ----
 --
 
-Note that the leading space is mandatory: each line must begin with a hash followed by a single space (`++$$# $$++'), all comments not following this syntax will either produce an error or be ignored.
+Note that the leading space is mandatory: each line must begin with a hash
+followed by a single space (`++$$# $$++'), all comments not following this
+syntax will either produce an error or be ignored.
 
-Multi-line comments (vars, commands, device) support http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists, tables, ...).
+Multi-line comments (vars, commands, device) support
+http://asciidoc.org/[AsciiDoc] markup (inline, paragraphs, blocks, lists,
+tables, ...).
 
 Note that the following AsciiDoc markup elements are *not* allowed:
 
 - sections
-- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists delimited by two-four colons are allowed)
-- open blocks directly at level 0 of the comment (you can use them as nested elements in other kinds of block)
+- labeled lists using two semi-colons (`;;`) as delimiter (labeled lists
+  delimited by two-four colons are allowed)
+- open blocks directly at level 0 of the comment (you can use them as
+  nested elements in other kinds of block)
 
-Also, keep in mind that the leading space will always be removed and therefore you shouldn't consider it in your AsciiDoc markup, e.g., if you want to add a listing block, the comment should look like this:
+Also, keep in mind that the leading space will always be removed and
+therefore you shouldn't consider it in your AsciiDoc markup, e.g.,
+if you want to add a listing block, the comment should look like this:
 
 ----
 # ----
@@ -592,7 +681,8 @@ Also, keep in mind that the leading space will always be removed and therefore y
 # ----
 ----
 
-As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as in:
+As an exception it's allowed to use empty commented lines (`++$$#$$++'),
+such as in:
 
 ----
 # ====
@@ -604,18 +694,28 @@ As an exception it's allowed to use empty commented lines (`++$$#$$++'), such as
 # ====
 ----
 
-They will be retained and can be used to add vertical space or to separate blocks when needed; note that using a hash followed by a single space (`++$$# $$++') will produce the same effect.
+They will be retained and can be used to add vertical space or to separate
+blocks when needed; note that using a hash followed by a single space
+(`++$$# $$++') will produce the same effect.
 
-Also note that empty lines, comments without the required leading space after the hash and lines with spaces preceeding a hash will 'break' multi-line comments.
+Also note that empty lines, comments without the required leading space
+after the hash and lines with spaces preceeding a hash will 'break'
+multi-line comments.
 
 
 [[report-a-bad-value]]
 Report a bad value
 ^^^^^^^^^^^^^^^^^^
 
-If certain values are not correctly reported, you can flag them with the special End Of Line comment `#BAD`, you can even add a short sentence (still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it, explaining the reason (e.g. `#BAD: unbelievably high value`, note that the colons are not mandatory).
+If certain values are not correctly reported, you can flag them with the
+special End Of Line comment `#BAD`, you can even add a short sentence
+(still supporting http://asciidoc.org/[AsciiDoc] inline markup) after it,
+explaining the reason (e.g. `#BAD: unbelievably high value`, note that
+the colons are not mandatory).
 
-This kind of flags/comments is allowed (i.e. you can append it at the end of the line) in the declaration of variables, RW types/values and commands, i.e.:
+This kind of flags/comments is allowed (i.e. you can append it at the
+end of the line) in the declaration of variables, RW types/values and
+commands, i.e.:
 
 ----
 <var.name>: <value>	#BAD
