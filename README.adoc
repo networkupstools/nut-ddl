@@ -122,10 +122,11 @@ system from an existing UPS or another power device, using "+upsc > file.dev+".
 
 To report new data for the Devices Dumps Library (DDL) mentioned above, such
 "data dump" reports can be best prepared by the
-link:https://raw.githubusercontent.com/networkupstools/nut/master/tools/nut-ddl-dump.sh[tools/nut-ddl-dump.sh]
+link:https://raw.githubusercontent.com/networkupstools/nut/master/tools/nut-ddl-dump.sh[`tools/nut-ddl-dump.sh`]
 script from the main NUT codebase, and reported on the NUT mailing list or
 via link:https://github.com/networkupstools/nut/issues[NUT issues on GitHub]
-or as a pull request against link:https://github.com/networkupstools/nut-ddl
+or as a pull request against the
+link:https://github.com/networkupstools/nut-ddl[NUT Devices Dumps Library]
 following the naming and other rules described in this document.
 
 <<comments,Comments>> are supported too.
