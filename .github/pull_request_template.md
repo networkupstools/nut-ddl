@@ -1,3 +1,4 @@
+<!-- Comment:
 ## Proposing a new NUT Devices Dumps Library (DDL) entry
 
 First of all, thank you for taking the time for preparing this contribution!
@@ -8,10 +9,13 @@ section and the text below it.
 
 To report new data for the Devices Dumps Library (DDL), such "data dump"
 reports can be best prepared by the
-link:https://raw.githubusercontent.com/networkupstools/nut/master/tools/nut-ddl-dump.sh[tools/nut-ddl-dump.sh]
+https://raw.githubusercontent.com/networkupstools/nut/master/tools/nut-ddl-dump.sh
 script from the main NUT codebase; at a minimum, output of `upsc` helps too.
+-->
 
 ## Sanity check list
+
+- [ ] This PR is named to help easy searches (identify the vendor, device...)
 
 - [ ] Data dump file name follows this pattern (safely using ASCII characters):
   `<manufacturer>__<model>__<driver-name>__<nut-version>__<report-number>.<extension>`
@@ -40,3 +44,6 @@ and
 - [ ] For a newly discovered supported device, a sibling PR for the main
   NUT codebase (at least `docs/driver.list.in`, or possibly VID/PID and
   other auto-detection mapping tables in the driver sources) is welcome.
+
+- [ ] This PR is linked to relevant issue(s) and/or PRs in the NUT project
+  if applicable
