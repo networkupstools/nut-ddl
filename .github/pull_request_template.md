@@ -27,8 +27,11 @@ script from the main NUT codebase; at a minimum, output of `upsc` helps too.
 
 - [ ] Information from `upsc` discovered fields is provided un-commented.
 
-- [ ] Additional data about supported RW variables and instant commands is
-  prefixed with standardized comment mark-up as documented on site, e.g.:
+- [ ] Additional data about supported RW variables and/or instant commands
+  is provided (as comments)...
+
+- [ ] ...prefixed with standardized comment mark-up as documented on site,
+  e.g.:
 ````
 #RW:<var.name>:<type>:<options>
 ````
@@ -42,8 +45,8 @@ provided as plain comments. While this would not allow for automated parsing
 and similar consumption of info, it is better than nothing for human readers.
 -->
 
-- [ ] Mark-up for structured comments is followed (as documented on site),
-  where applicable.
+- [ ] Mark-up for other structured comments is followed (for fields, vars,
+  etc. as documented on site), where applicable.
 
 - [ ] For devices supported only with special settings in their `ups.conf`
   configuration section (e.g. `vendorid` and `productid` required along
