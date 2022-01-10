@@ -36,6 +36,11 @@ and
 ````
 #CMD:<command.name>
 ````
+<!-- Comment:
+For manually written/pasted submissions, information from these tools can be
+provided as plain comments. While this would not allow for automated parsing
+and similar consumption of info, it is better than nothing for human readers.
+-->
 
 - [ ] Mark-up for structured comments is followed (as documented on site),
   where applicable.
