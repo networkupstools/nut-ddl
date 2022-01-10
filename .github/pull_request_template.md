@@ -23,6 +23,8 @@ script from the main NUT codebase; at a minimum, output of `upsc` helps too.
 
 - [ ] This file is placed into a sub-directory named same as the `manufacturer`.
 
+- [ ] Was this content prepared with `nut-ddl-dump.sh` script?
+
 - [ ] Information from `upsc` discovered fields is provided un-commented.
 
 - [ ] Additional data about supported RW variables and instant commands is
@@ -35,7 +37,8 @@ and
 #CMD:<command.name>
 ````
 
-- [ ] Mark-up for structured comments is followed, where applicable.
+- [ ] Mark-up for structured comments is followed (as documented on site),
+  where applicable.
 
 - [ ] For devices supported only with special settings in their `ups.conf`
   configuration section (e.g. `vendorid` and `productid` required along
@@ -46,4 +49,4 @@ and
   other auto-detection mapping tables in the driver sources) is welcome.
 
 - [ ] This PR is linked to relevant issue(s) and/or PRs in the NUT project
-  if applicable
+  if applicable.
