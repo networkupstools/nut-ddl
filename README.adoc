@@ -91,6 +91,11 @@ Maintainers of this library should keep in mind that:
 	Dell__UPS_Tower_1920W_HV__snmp-ups__2.6.0__01.dev
 	Dell__UPS_Tower_1920W_HV__snmp-ups__2.6.0__01.seq
 
+* Words in the filename and manufacturer directory should be plain ASCII
+  (vendors usually have transliteration to English per branding or human
+  language rules); other strings had been seen as problematic (especially
+  with builds on older platforms without good locale support).
+
 
 [[devseq-files]]
 DEV/SEQ files
