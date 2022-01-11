@@ -36,3 +36,13 @@ ups.status: OL
 ups.temperature: 0.0
 ups.type: online
 ups.vendorid: ffff
+
+#CMD:beeper.toggle
+#CMD:load.off
+#CMD:load.on
+#CMD:shutdown.return
+#CMD:shutdown.stop
+#CMD:test.battery.start
+#CMD:test.battery.start.deep
+#CMD:test.battery.start.quick
+#CMD:test.battery.stop
