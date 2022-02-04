@@ -1,4 +1,8 @@
-check:
+all: check
+
+check: check-filename-structure
+
+check-filename-structure:
 	LANG=C; LC_ALL=C; TZ=UTC; \
 	export LANG LC_ALL TZ ; \
 	( find . -name '*.dev' -o -name '*.nds' | sort -n | while IFS='' read F ; do \
