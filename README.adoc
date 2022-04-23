@@ -155,6 +155,7 @@ TIMER 60
 ----
 
 Here, we:
+
 * wait 5 minutes with the initial content, then
 * generate a power failure (switch On Battery)
 * We wait 5 more minutes before reaching the battery low level.
