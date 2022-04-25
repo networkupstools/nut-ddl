@@ -20,6 +20,17 @@
 #   override.battery.runtime.low = 180
 #   override.ups.model = "PowerWalker VI 650 SH"
 #   override.driver.parameter.pollfreq = 40
+# [powerwalker-1200]
+#   driver = usbhid-ups
+#   port = auto
+#   desc = "PowerWalker VI 1200 SH"
+#   vendorid = 06da
+#   bus = "004"
+#   override.battery.charge.warning = 30
+#   override.battery.charge.low = 15
+#   override.battery.runtime.low = 180
+#   override.ups.model = "PowerWalker VI 1200 SH"
+#   override.driver.parameter.pollfreq = 40
 
 # upsmon.conf
 #   POLLFREQ 20
@@ -72,3 +83,20 @@ ups.timer.start: -1
 ups.type: offline / line interactive
 ups.vendorid: 06da
 
+# :; upscmd -l powerwalker-650
+# Instant commands supported on UPS [powerwalker-650]:
+# beeper.disable - Disable the UPS beeper
+# beeper.enable - Enable the UPS beeper
+# beeper.mute - Temporarily mute the UPS beeper
+# beeper.off - Obsolete (use beeper.disable or beeper.mute)
+# beeper.on - Obsolete (use beeper.enable)
+# load.off - Turn off the load immediately
+# load.off.delay - Turn off the load with a delay (seconds)
+# load.on - Turn on the load immediately
+# load.on.delay - Turn on the load with a delay (seconds)
+# shutdown.return - Turn off the load and return when power is back
+# shutdown.stayoff - Turn off the load and remain off
+# shutdown.stop - Stop a shutdown in progress
+# test.battery.start.deep - Start a deep battery test
+# test.battery.start.quick - Start a quick battery test
+# test.battery.stop - Stop the battery test
