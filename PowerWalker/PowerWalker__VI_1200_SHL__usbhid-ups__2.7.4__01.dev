@@ -48,7 +48,7 @@ ups.timer.start: 0
 ups.type: offline / line interactive
 ups.vendorid: 06da
 
-:; upsrw ups0:
+# :; upsrw ups0:
 # [output.voltage.nominal]
 # Nominal output voltage (V)
 # Type: ENUM
