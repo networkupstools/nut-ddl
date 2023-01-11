@@ -40,6 +40,10 @@ ups.vendorid: 051d
 # test.panel.start - Start testing the UPS panel
 # test.panel.stop - Stop a UPS panel test
 
+#CMD:shutdown.reboot
+#CMD:test.panel.start
+#CMD:test.panel.stop
+
 # EXPLORE MODE info:
 #
 # :; usbhid-ups -DDDDD -x explore -a myups -x vendorid=051d outputs:
