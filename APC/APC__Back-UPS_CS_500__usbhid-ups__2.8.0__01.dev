@@ -91,7 +91,7 @@ ups.vendorid: 051d
 # [D3]  ff 85 35 09 72 b1 82 85 1c 09 16 75 18 95 01 15 00 27 ff ff ff 00 b1 82 c0
 # [D3]  05 84 09 12 a1 00 c0 06 86 ff 09 03 a1 00 c0 09 05 a1 00 85 40 09 7c 75 08
 # [D3]  95 01 15 00 25 01 b1 82 c0 c0
-Using subdriver: EXPLORE HID 0.2
+# Using subdriver: EXPLORE HID 0.2
 # [D1] 35 HID objects found
 # [D4] Entering libusb_get_report
 # [D3] Report[get]: (2 bytes) => 01 01
