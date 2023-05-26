@@ -354,6 +354,33 @@ e.g.:
 ----
 --
 
+Device comment block::
+A way to pass otherwise unclassified blocks of information which benefits
+from pre-formatting, such as `ups.conf` device configuration section examples,
+or "console screenshots". It may include a title (recommended for readability).
++
+--
+----
+# DEVICE:COMMENT-BLOCK: <title>
+# <pre-formatted text>
+# ...
+# <pre-formatted text>
+# DEVICE:EOC
+----
+
+e.g.:
+
+----
+# DEVICE:COMMENT-BLOCK: Driver configuration
+# :; cat /etc/nut/ups.conf
+#
+# [ups]
+#   driver = blazer_ser
+#   port = /dev/ttyUSB0
+# DEVICE:EOC
+----
+--
+
 Device support level::
 Express on a scale of 1 to 10 how much you think the device is well supported
 by NUT.
