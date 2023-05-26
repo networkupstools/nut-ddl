@@ -330,7 +330,7 @@ e.g.:
 
 Device comment::
 A special comment to express general thoughts about the whole device and
-to describe the way NUT supports it.
+to describe the way NUT supports it. At most one is allowed per file.
 +
 --
 ----
