@@ -17,14 +17,14 @@
 # The usb-serial adapter is built into the UPS. I didn't install anything
 # extra manually, the driver is built into the kernel.
 #
-# Further technical detail comments are available in the downloadable report
-# source file.
-# DEVICE:EOC
+# [NOTE]
+# ======
+# In this report, we see `upsc` output when the device is on main power.
 #
-# See also nJoy__Keen-600__blazer_ser__2.7.4__02.dev
-#   and    nJoy__Keen-600__nutdrv_qx__2.7.4__03.dev
-
-# upsc on main power
+# See also `nJoy__Keen-600__blazer_ser__2.7.4__02.dev` (on battery)
+#   and    `nJoy__Keen-600__nutdrv_qx__2.7.4__03.dev`  (another driver)
+# ======
+# DEVICE:EOC
 
 battery.voltage: 13.70
 battery.voltage.high: -1.08
