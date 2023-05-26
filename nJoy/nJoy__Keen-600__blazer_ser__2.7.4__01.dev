@@ -48,6 +48,7 @@ ups.status: OL
 ups.temperature: 25.0
 ups.type: offline / line interactive
 
+# DEVICE:COMMENT-BLOCK: Syslog of NUT startup
 # :; cat /var/log/syslog | grep upsd
 #
 # upsdrvctl[12484]: Error: no UPS definitions found in ups.conf
@@ -85,13 +86,17 @@ ups.type: offline / line interactive
 # upsd[12669]: Connected to UPS [ups]: blazer_ser-ups
 # upsd[12669]: Connected to UPS [ups]: blazer_ser-ups
 # upsd[12670]: Startup successful
+# DEVICE:EOC
 
+# DEVICE:COMMENT-BLOCK: Driver configuration
 # :; cat /etc/nut/ups.conf
 #
 # [ups]
 #   driver = blazer_ser
 #   port = /dev/ttyUSB0
+# DEVICE:EOC
 
+# DEVICE:COMMENT-BLOCK: `lsusb` listing
 # :; lsusb -vvv
 #
 # Bus 001 Device 003: ID 1a86:7523 QinHeng Electronics HL-340 USB-Serial adapter
@@ -163,4 +168,4 @@ ups.type: offline / line interactive
 # can't get debug descriptor: Resource temporarily unavailable
 # Device Status:     0x0000
 #   (Bus Powered)
-
+# DEVICE:EOC
