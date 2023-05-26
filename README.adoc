@@ -332,6 +332,10 @@ Device comment::
 A special comment to express general thoughts about the whole device and
 to describe the way NUT supports it. At most one is allowed per file.
 +
+Keep in mind that each comment line is stripped of two leftmost characters
+(assuming the hash and space characters), and the rest is treated as usual
+asciidoc markup, e.g. keep blank lines to separate multiple paragraphs.
++
 --
 ----
 # DEVICE:COMMENT:
