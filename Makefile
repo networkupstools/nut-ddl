@@ -2,6 +2,13 @@ all: check
 
 check: check-filename-structure check-content-markup
 
+html: index.html
+
+index.html: .DUMMY
+	[ -s ../Makefile ] && [ -x ../tools/nut-ddl.py ] # error out if not building along with nut-website
+	D="`pwd`" && D="`basename "$$D"`" && [ -n "$$D" ] || D="ddl" ; \
+	cd .. && $(MAKE) $(MAKE_FLAGS) $(AM_FLAGS) "$$D/index.html"
+
 check-filename-structure:
 	LANG=C; LC_ALL=C; TZ=UTC; \
 	export LANG LC_ALL TZ ; \
@@ -29,3 +36,5 @@ check-content-markup:
 		echo "`date -u`: OK : All *.dev files have passed the basic sanity check : $$PASSED"; \
 		exit 0; \
 	)
+
+.DUMMY:
