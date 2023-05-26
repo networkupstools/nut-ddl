@@ -385,6 +385,24 @@ e.g.:
 ----
 --
 
+Device information URL(s)::
+Further information about this device or report can be found at specified URL,
+e.g. vendor product page, NUT issue tracker or mailing list archive page where
+the report originated, etc. Many URLs may be listed, but only one per tag.
++
+--
+----
+# DEVICE:URL:<link>
+----
+
+e.g.:
+
+----
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/867
+# DEVICE:URL: https://www.njoy.ro/UPS/keen-600
+----
+--
+
 Device support level::
 Express on a scale of 1 to 10 how much you think the device is well supported
 by NUT.
