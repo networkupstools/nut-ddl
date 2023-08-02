@@ -39,6 +39,7 @@ ups.status: OL
 ups.timer.reboot: 0
 ups.vendorid: 051d
 
+# NOTE: Do not fix into DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: -- proper info is below too
 # DEVICE:COMMENT-BLOCK: `upscmd -l myups` outputs
 # shutdown.reboot - Shut down the load briefly while rebooting the UPS
 # test.panel.start - Start testing the UPS panel
@@ -50,7 +51,6 @@ ups.vendorid: 051d
 #CMD:test.panel.stop
 
 # DEVICE:COMMENT-BLOCK: EXPLORE MODE info
-#
 # :; usbhid-ups -DDDDD -x explore -a myups -x vendorid=051d outputs:
 #
 # Network UPS Tools - Generic HID driver 0.49 (2.8.0-Windows-355-gbce06545a)
