@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/1012
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1012
 # Vendor: https://www.cyberpowersystems.com/product/ups/battery-backup/bl1250u/
 
 # In earlier setup, manually set port=/dev/hidraw0 ("auto" does not work)

@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/605
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/605
 
 # Simulated "standalone" testing using 'upsmon -c fsd' worked fine.
 

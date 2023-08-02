@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/337
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/337
 
 # DEVICE:COMMENT
 # Shutdown sequence tested with NUT 2.7.3.

@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/347
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/347
 
 # DEVICE:COMMENT
 # Test results: Tested on FreeNAS 9.10.1. Unplugged the UPS and the system shutdown after 30 seconds.
