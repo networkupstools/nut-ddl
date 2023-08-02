@@ -283,7 +283,7 @@ Comments that are bound to a particular variable.
 # <var.name>:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
@@ -315,7 +315,7 @@ Comments binded to a particular command.
 # <command.name>:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
@@ -349,7 +349,7 @@ titles for particular subjects).
 # DEVICE:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
