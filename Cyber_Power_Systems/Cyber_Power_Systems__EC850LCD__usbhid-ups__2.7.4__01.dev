@@ -1,7 +1,7 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/622
 
 # The link to the manufacturer's online description of the device:
-# DEVICE:URL: https://www.cyberpowersystems.com/product/ups/ec850lcd/
+# DEVICE:URL:VENDOR: https://www.cyberpowersystems.com/product/ups/ec850lcd/
 
 battery.charge: 89
 battery.charge.low: 10

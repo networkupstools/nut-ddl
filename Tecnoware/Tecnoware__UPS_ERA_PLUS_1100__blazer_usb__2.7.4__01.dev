@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/747
-# Vendor: https://www.tecnoware.com/Prodotti/FGCERAPL1100/ups-era-plus-1100.aspx
+# DEVICE:URL:VENDOR: https://www.tecnoware.com/Prodotti/FGCERAPL1100/ups-era-plus-1100.aspx
 
 battery.charge: 100
 battery.voltage: 13.60

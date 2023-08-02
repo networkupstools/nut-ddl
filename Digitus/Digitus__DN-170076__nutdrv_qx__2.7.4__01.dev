@@ -1,5 +1,6 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/948
-# Vendor: https://www.digitus.info/en/products/network-and-server-cabinets/power-supply/uninterruptible-power-supplies/dn-170076/
+# DEVICE:URL:VENDOR: https://www.digitus.info/en/products/network-and-server-cabinets/power-supply/uninterruptible-power-supplies/dn-170076/
+# DEVICE:URL:VENDOR: https://www.assmann.com
 
 # I've successfully tested the nutdrv_qx driver with the Digitus DN-170076 UPS,
 # connected via USB (it has a DB-9 serial interface as well).

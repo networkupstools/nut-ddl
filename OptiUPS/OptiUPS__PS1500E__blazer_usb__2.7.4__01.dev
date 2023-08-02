@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/pull/1051
-# DEVICE:URL: https://opti-ups.com/index.asp?SCID=SC20060001 
+# DEVICE:URL:VENDOR: https://opti-ups.com/index.asp?SCID=SC20060001
 
 # DEVICE:COMMENT-BLOCK:
 # Opti-UPS PS1500E connects via serial over USB, and is supported

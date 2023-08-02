@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1416
-# DEVICE:URL: https://www.salicru.com/sps-850-adv-t.html
+# DEVICE:URL:VENDOR: https://www.salicru.com/sps-850-adv-t.html
 
 # DEVICE:COMMENT: 
 # First report for new salicru HID subdriver from PR referenced

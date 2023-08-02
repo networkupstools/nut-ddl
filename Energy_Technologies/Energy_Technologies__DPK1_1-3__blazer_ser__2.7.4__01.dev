@@ -1,6 +1,6 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/762
-# Vendor: https://www.tensy.ru/podderzhka/dokumentatsiya/ibp-serii-dpk/
-# e.g. https://www.tensy.ru/attachments/get/25/rukovodstvo-dpk-1-3-kva-7ah.pdf
+# DEVICE:URL:VENDOR: https://www.tensy.ru/podderzhka/dokumentatsiya/ibp-serii-dpk/
+# DEVICE:URL:VENDOR: https://www.tensy.ru/attachments/get/25/rukovodstvo-dpk-1-3-kva-7ah.pdf
 
 # EnergTechnology DPK1/1-3 aka Energy Technologies DPK1/1-3
 

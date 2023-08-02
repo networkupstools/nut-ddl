@@ -1,6 +1,6 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/732
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/pull/1199
-# DEVICE:URL: https://www.salicru.com/sps-home.html
+# DEVICE:URL:VENDOR: https://www.salicru.com/sps-home.html
 
 # DEVICE:COMMENT:
 # Second report for new salicru HID subdriver from

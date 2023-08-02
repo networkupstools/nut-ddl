@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/554
-# Vendor: https://www.salicru.com/en/ups/sps-one.html
+# DEVICE:URL:VENDOR: https://www.salicru.com/en/ups/sps-one.html
 
 battery.charge: 70
 battery.voltage: 24.30

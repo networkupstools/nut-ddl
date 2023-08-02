@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/774
-# Vendor: https://powerwalker.com/?page=select&cat=VI_THID&lang=en
+# DEVICE:URL:VENDOR: https://powerwalker.com/?page=select&cat=VI_THID&lang=en
 
 # I bought a Powerwalker VI 750T/HID, but the VI 500T/HID is basically the
 # same model, just less power. And the VI 1000T/HID and VI 1500T/HID come

@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1191
-# Vendor: https://www.cyberpowersystems.com/product/ups/new-smart-app-sinewave/pr1500rt2u/
+# DEVICE:URL:VENDOR: https://www.cyberpowersystems.com/product/ups/new-smart-app-sinewave/pr1500rt2u/
 
 # Tested shutdown and the master and all slaves shutdown at LB as expected (35%)
 

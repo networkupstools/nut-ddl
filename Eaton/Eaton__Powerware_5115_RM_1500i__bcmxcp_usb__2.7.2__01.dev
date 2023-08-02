@@ -1,4 +1,4 @@
-# Source: https://alioth-lists.debian.net/pipermail/nut-upsdev/2017-July/007313.html
+# DEVICE:URL:REPORT: https://alioth-lists.debian.net/pipermail/nut-upsdev/2017-July/007313.html
 
 # Just wanted to provide a upsc dump for an Eaton/Powerware 5115 rack mount unit.
 # This was on a CentOS 7.3 machine with following packages installed:

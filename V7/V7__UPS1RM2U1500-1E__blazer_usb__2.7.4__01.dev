@@ -1,5 +1,5 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/716
-# Vendor: http://www.v7world.com/uk/ups-1500va-rack-mount-2u-eu.html
+# DEVICE:URL:VENDOR: http://www.v7world.com/uk/ups-1500va-rack-mount-2u-eu.html
 
 # Tested and working, V7 1500VA 2U rackmount UPS (EU version), over USB.
 # V7 UPS1RM2U1500-1E UPS 1500VA Rack Mount 2U supported by blazer_usb
