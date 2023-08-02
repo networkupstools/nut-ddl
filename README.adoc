@@ -420,16 +420,23 @@ Further information about this device or report can be found at specified URL,
 e.g. vendor product page, NUT issue tracker or mailing list archive page where
 the report originated, etc. Many URLs may be listed, but only one per tag.
 +
+Use of specific `DEVICE:URL:VENDOR:` (product/vendor/manufacturer pages) and
+`DEVICE:URL:REPORT:` (GitHub issue or pull request, mailing list archive, blog
+etc. where the reported information originated and more clues may appear later)
+is encouraged over the less specific `DEVICE:URL:` used for additional info.
++
 --
 ----
+# DEVICE:URL:VENDOR:<link>
+# DEVICE:URL:REPORT:<link>
 # DEVICE:URL:<link>
 ----
 
 e.g.:
 
 ----
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/867
-# DEVICE:URL: https://www.njoy.ro/UPS/keen-600
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/867
+# DEVICE:URL:VENDOR: https://www.njoy.ro/UPS/keen-600
 ----
 --
 
