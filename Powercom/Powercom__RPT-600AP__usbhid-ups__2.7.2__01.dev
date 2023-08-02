@@ -15,8 +15,8 @@
 #
 # See also comments for Raptor 2000 with similar issues.
 #
-# [NOTE]
 # . Notification with COMMBAD driver restart
+# [NOTE]
 # ======
 # This UPS occasionally disconnects, and driver begins reporting "Data Stale"
 #
