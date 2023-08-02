@@ -40,9 +40,7 @@ ups.timer.shutdown: -60
 ups.timer.start: 0
 ups.vendorid: 0764
 
-# DEVICE:COMMENT-BLOCK: Variables dump
-# TODO: Convert into RW:...
-# :; upsrw ups@localhost
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
 # [battery.charge.low]
 # Description unavailable
 # Type: STRING

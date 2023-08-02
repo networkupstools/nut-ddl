@@ -1,8 +1,9 @@
 # DEVICE:URL: http://news.gmane.org/find-root.php?message_id=SNT404%2dEAS8312A94DDAF0FAD4B7702BA52A0%40phx.gbl
 
-# DEVICE:COMMENT-BLOCK:
-# Q1 / Megatec protocol
-# Product Description from "nut-scanner" : " WayTech USB-RS232 Interface (V1.0) Baud rate 2400bps"
+# DEVICE:COMMENT:
+# * Q1 / Megatec protocol
+# * Product Description from "nut-scanner" :
+#   " WayTech USB-RS232 Interface (V1.0) Baud rate 2400bps"
 # DEVICE:EOC
 
 battery.charge: 100

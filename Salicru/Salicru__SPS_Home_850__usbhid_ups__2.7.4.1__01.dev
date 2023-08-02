@@ -2,7 +2,7 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/pull/1199
 # DEVICE:URL:VENDOR: https://www.salicru.com/sps-home.html
 
-# DEVICE:COMMENT: 
+# DEVICE:COMMENT:
 # First report for new salicru HID subdriver from issue/PR referenced
 # above for Salicru SPS 850 HOME.
 #

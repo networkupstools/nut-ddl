@@ -15,14 +15,13 @@
 # See also: Digitus__DN-170041__nutdrv_qx__2.7.4__01.dev
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK: Driver configuration
-# :; cat ups.conf
+# DEVICE:COMMENT-BLOCK:UPSCONF:
 # [digitus]
 #     driver = blazer_usb
 #     port = auto
 #     vendorid = 0665
 #     productid = 5161
-#     subdriver = cypress 
+#     subdriver = cypress
 #     desc = "Digitus DN-170041"
 # DEVICE:EOC
 

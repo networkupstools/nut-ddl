@@ -14,23 +14,10 @@
 # as in the attached example.
 #
 # See also comments for Raptor 2000 with similar issues.
-# DEVICE:EOC
-
-# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/634
-
-# DEVICE:COMMENT-BLOCK: Driver configuration
-# [RPT-600AP]
-#        # Setting battery charge works with config file
-#        # (because `upsrw` errors out)
-#        driver = usbhid-ups
-#        port = auto
-#        vendorid = 0d9f
-#        ignorelb
-#        override.battery.charge.low = 70
-#        override.battery.charge.warning = 80
-# DEVICE:EOC
-
-# DEVICE:COMMENT-BLOCK: Notofication with COMMBAD driver restart
+#
+# [NOTE]
+# . Notification with COMMBAD driver restart
+# ======
 # This UPS occasionally disconnects, and driver begins reporting "Data Stale"
 #
 # As a workaround, in `upsmon.conf` declare calling the script for `COMMBAD`:
@@ -72,7 +59,23 @@
 #    port = auto
 #    vendorid = 0d9f
 # ----
+# ======
 # DEVICE:EOC
+
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/634
+
+# DEVICE:COMMENT-BLOCK:UPSCONF:
+# [RPT-600AP]
+#        # Setting battery charge works with config file
+#        # (because `upsrw` errors out)
+#        driver = usbhid-ups
+#        port = auto
+#        vendorid = 0d9f
+#        ignorelb
+#        override.battery.charge.low = 70
+#        override.battery.charge.warning = 80
+# DEVICE:EOC
+
 
 # :; upsc RPT-600AP
 battery.charge: 100
@@ -114,14 +117,13 @@ ups.timer.shutdown: 0
 ups.timer.start: 740160
 ups.vendorid: 0d9f
 
-# DEVICE:COMMENT-BLOCK: Variables
-# TODO: Convert to RW:...
-# :; upsrw RPT-600AP
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
 # [ups.delay.shutdown]
 # Interval to wait after shutdown with delay command (seconds)
 # Type: STRING
 # Maximum length: 8
 # Value: 20
+#
 # [ups.delay.start]
 # Interval to wait before (re)starting the load (seconds)
 # Type: STRING
@@ -129,9 +131,7 @@ ups.vendorid: 0d9f
 # Value: 60
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK: Commands
-# TODO: Convert to CMD:...
-# :; upscmd -l RPT-600AP
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
 # Instant commands supported on UPS [RPT-600AP]:
 # beeper.disable - Disable the UPS beeper
 # beeper.enable - Enable the UPS beeper
@@ -143,7 +143,7 @@ ups.vendorid: 0d9f
 # test.battery.start.quick - Start a quick battery test
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK: `lsusb` listing
+# DEVICE:COMMENT-BLOCK:LSUSB:
 # :; lsusb -d 0d9f:0004 -v
 # Bus 002 Device 002: ID 0d9f:0004 Powercom Co., Ltd 
 # Device Descriptor:
