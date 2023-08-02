@@ -272,7 +272,7 @@ Note that the colon after `#COMMENT` is not mandatory.
 --
 
 Vars comments::
-Comments that are binded to a particular variable.
+Comments that are bound to a particular variable.
 +
 --
 ----
@@ -363,7 +363,7 @@ e.g.:
 --
 
 Device comment block::
-A way to pass otherwise unclassified blocks of information which benefits
+A way to pass otherwise "un-classified" blocks of information which benefits
 from pre-formatting, such as `ups.conf` device configuration section examples,
 or "console screenshots". It may include a title (recommended for readability).
 +
