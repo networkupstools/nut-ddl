@@ -1,4 +1,4 @@
-# http://lists.alioth.debian.org/pipermail/nut-upsuser/2014-February/008907.html
+# DEVICE:URL: https://lists.alioth.debian.org/pipermail/nut-upsuser/2014-February/008907.html
 ambient.temperature: 28.0
 ambient.temperature.high: 40.00
 ambient.temperature.low: 0.00

@@ -1,5 +1,5 @@
-# http://lists.alioth.debian.org/pipermail/nut-upsuser/2012-October/008006.html
-# http://lists.alioth.debian.org/pipermail/nut-upsuser/2013-July/008494.html
+# DEVICE:URL: https://lists.alioth.debian.org/pipermail/nut-upsuser/2012-October/008006.html
+# DEVICE:URL: https://lists.alioth.debian.org/pipermail/nut-upsuser/2013-July/008494.html
 ambient.temperature: 21.0
 ambient.temperature.high: 0.00
 ambient.temperature.low: 0.00

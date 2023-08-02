@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/633#issuecomment-445472803
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/633#issuecomment-445472803
 
 # The beeper is broken identically to RPT-600AP, which behaves almost
 # identically -- probably the same USB chip, just different batteries.

@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/601
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/601
 
 # The previously reported issue with the driver crashing is still present.
 # You can be forgiven for believing that it might be working because upsc

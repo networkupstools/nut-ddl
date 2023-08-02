@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/520
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/520
 
 # :; upsc
 battery.charge: 100

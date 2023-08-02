@@ -1,4 +1,4 @@
-# From https://github.com/networkupstools/nut/pull/584
+# DEVICE:URL: https://github.com/networkupstools/nut/pull/584
 
 
 # Shutdown sequence is a work in progress, but without battery.charge there is no low battery.

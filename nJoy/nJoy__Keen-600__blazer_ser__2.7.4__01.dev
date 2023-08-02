@@ -3,7 +3,7 @@
 ### DEVICE:URL: link:https://www.njoy.ro/UPS/keen-600
 
 # DEVICE:COMMENT:
-# From https://github.com/networkupstools/nut/issues/867 :
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/867 :
 #
 # * Manufacturer: nJoy
 # * Device: Keen 600 USB

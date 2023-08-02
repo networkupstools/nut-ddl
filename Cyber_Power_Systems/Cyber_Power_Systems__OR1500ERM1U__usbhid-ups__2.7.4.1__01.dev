@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/1338
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1338
 
 # Note: wrong output.voltage, still reported 253V
 

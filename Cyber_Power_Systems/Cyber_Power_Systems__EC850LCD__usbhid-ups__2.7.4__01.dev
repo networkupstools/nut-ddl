@@ -1,9 +1,8 @@
-# From https://github.com/networkupstools/nut/issues/622
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/622
 
 # The link to the manufacturer's online description of the device:
-# https://www.cyberpowersystems.com/product/ups/ec850lcd/
+# DEVICE:URL: https://www.cyberpowersystems.com/product/ups/ec850lcd/
 
-# :; upsc ups@localhost
 battery.charge: 89
 battery.charge.low: 10
 battery.charge.warning: 20
@@ -41,6 +40,8 @@ ups.timer.shutdown: -60
 ups.timer.start: 0
 ups.vendorid: 0764
 
+# DEVICE:COMMENT-BLOCK: Variables dump
+# TODO: Convert into RW:...
 # :; upsrw ups@localhost
 # [battery.charge.low]
 # Description unavailable
@@ -77,3 +78,4 @@ ups.vendorid: 0764
 # Type: STRING
 # Maximum length: 10
 # Value: 30
+# DEVICE:EOC

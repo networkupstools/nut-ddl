@@ -1,4 +1,4 @@
-# From https://github.com/networkupstools/nut/issues/1066
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1066
 # UPS2000-G-3KRTS firmware reports "UPS2000A"
 
 battery.capacity: 9

@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/1279
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1279
 
 # Online Xanto S700 (build before 2012). But now it almost works,
 # except parameter 'override.battery.packs' doesn't work.

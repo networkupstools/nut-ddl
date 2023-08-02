@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/pull/181
+# DEVICE:URL: https://github.com/networkupstools/nut/pull/181
 # Connected to a Smart-UPS 1500
 battery.charge: 100
 battery.charge.low: 10

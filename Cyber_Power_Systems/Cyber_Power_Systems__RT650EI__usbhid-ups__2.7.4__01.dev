@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/453
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/453
 # Vendor: http://www.cyberpowersystems.de/produkte/backup-usv-serien/rt-serie.html
 
 # Q: The battery.voltage and battery.voltage.nominal values don't match.

@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/1403
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1403
 # Vendor: https://www.cyberpower.com/jp/ja/product/sku/cpj500#downloads
 
 battery.charge: 100

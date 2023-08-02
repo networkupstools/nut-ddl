@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/646#issuecomment-462101161
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/646#issuecomment-462101161
 
 # As others have noted in PowerWalker-related issues, the Liebert HID subdriver
 # seems to be lacking certain features. For instance input/output voltage,

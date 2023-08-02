@@ -1,6 +1,14 @@
-# First report for new salicru HID subdriver from
-# https://github.com/networkupstools/nut/issues/1416
-# for Salicru SPS 850 ADV T: https://www.salicru.com/sps-850-adv-t.html
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1416
+# DEVICE:URL: https://www.salicru.com/sps-850-adv-t.html
+
+# DEVICE:COMMENT-BLOCK: 
+# First report for new salicru HID subdriver from PR referenced
+# above for Salicru SPS 850 ADV T.
+#
+# NOTE: I tried to set the value of `battery.runtime.low` and 
+# `battery.charge.low` using `upsrw`, but although the command returns OK,
+# no values seem to be modified.
+# DEVICE:EOC
 
 # $ upsc salicru
 battery.charge: 100
@@ -42,6 +50,8 @@ ups.serial: 000000000000
 ups.status: OL
 ups.vendorid: 2e66
 
+# DEVICE:COMMENT: Variables
+# TODO: Convert to RW:...
 # :; upsrw salicru
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
@@ -54,13 +64,11 @@ ups.vendorid: 2e66
 # Type: STRING
 # Maximum length: 10
 # Value: 300
+# DEVICE:EOC
 
+# DEVICE:COMMENT: Commands (none reported)
 # :; upscmd -l salicru
 # Instant commands supported on UPS [salicru]:
 # 
-
-# NOTE: I tried to set the value of `battery.runtime.low` and 
-# `battery.charge.low` using `upsrw`, but although the command returns OK,
-# no values seem to be modified.
-
+# DEVICE:EOC
 

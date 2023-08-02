@@ -1,14 +1,20 @@
-# Source: https://github.com/networkupstools/nut/issues/633
-# Vendor: http://pcmups.com.tw/eA/html/product/show.php?num=226&root=13&kind=105&page=1&keyword=
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/633
+# Vendor:
+# DEVICE:URL: http://pcmups.com.tw/eA/html/product/show.php?num=226&root=13&kind=105&page=1&keyword=
 
+# DEVICE:COMMENT:
 # Sometimes `ups.beeper.status: disabled` disappears from upsc output after
 # invoking `beeper.disable` or `beeper.enable` command, but the commands are
 # processed as expected. `ups.beeper.status` never shown as enabled in upsc
 # report.
+#
 # When UPS in warning state, `beeper.disable` does not disable beeper.
 # Beeper could be disabled in this mode only by hardware button.
+# DEVICE:EOC
 
-# https://github.com/networkupstools/nut/issues/634
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/634
+
+# DEVICE:COMMENT-BLOCK: Driver configuration
 # Setting battery charge works with config file (because `upsrw` errors out):
 # [RPT-600AP]
 #        driver = usbhid-ups
@@ -17,11 +23,15 @@
 #        ignorelb
 #        override.battery.charge.low = 70
 #        override.battery.charge.warning = 80
-
+#
 # See also comments for Raptor 2000 with similar issues.
+# DEVICE:EOC
 
+# DEVICE:COMMENT-BLOCK: Notofication with COMMBAD driver restart
 # This UPS occasionally disconnects, and driver begins reporting "Data Stale"
-# As a workaround, in upsmon.conf declare:
+#
+# As a workaround, in `upsmon.conf` declare calling the script for `COMMBAD`:
+# ----
 # ...
 # NOTIFYCMD "/home/user/bin/upsmon_notify.sh"
 # ...
@@ -36,8 +46,11 @@
 # NOTIFYFLAG NOCOMM       SYSLOG+EXEC
 # NOTIFYFLAG NOPARENT     SYSLOG+EXEC
 # ...
-
-# :; cat /home/user/bin/upsmon_notify.sh
+# ----
+#
+# Populate the notification script like this:
+# `:; cat /home/user/bin/upsmon_notify.sh`
+# ----
 # #!/bin/bash
 # /usr/bin/logger -t NOTIFYCMD "${NOTIFYTYPE} ${UPSNAME}"
 # if [ "${NOTIFYTYPE}" = "COMMBAD" ]; then
@@ -45,13 +58,18 @@
 #   /sbin/upsdrvctl stop 
 #   /sbin/upsdrvctl -D start
 # fi
-
-# :;  cat /etc/nut/ups.conf
+# ----
+#
+# Configure the driver like this:
+# `:; cat /etc/nut/ups.conf`
+# ----
 # maxretry = 3
 # [RPT-600AP]
 #    driver = usbhid-ups
 #    port = auto
 #    vendorid = 0d9f
+# ----
+# DEVICE:EOC
 
 # :; upsc RPT-600AP
 battery.charge: 100
@@ -93,6 +111,8 @@ ups.timer.shutdown: 0
 ups.timer.start: 740160
 ups.vendorid: 0d9f
 
+# DEVICE:COMMENT: Variables
+# TODO: Convert to RW:...
 # :; upsrw RPT-600AP
 # [ups.delay.shutdown]
 # Interval to wait after shutdown with delay command (seconds)
@@ -104,7 +124,10 @@ ups.vendorid: 0d9f
 # Type: STRING
 # Maximum length: 8
 # Value: 60
+# DEVICE:EOC
 
+# DEVICE:COMMENT: Commands
+# TODO: Convert to CMD:...
 # :; upscmd -l RPT-600AP
 # Instant commands supported on UPS [RPT-600AP]:
 # beeper.disable - Disable the UPS beeper
@@ -115,7 +138,9 @@ ups.vendorid: 0d9f
 # shutdown.return - Turn off the load and return when power is back
 # shutdown.stayoff - Turn off the load and remain off
 # test.battery.start.quick - Start a quick battery test
+# DEVICE:EOC
 
+# DEVICE:COMMENT-BLOCK: `lsusb` listing
 # :; lsusb -d 0d9f:0004 -v
 # Bus 002 Device 002: ID 0d9f:0004 Powercom Co., Ltd 
 # Device Descriptor:
@@ -176,3 +201,4 @@ ups.vendorid: 0d9f
 #         bInterval             100
 # Device Status:     0x0001
 #   Self Powered 
+# DEVICE:EOC

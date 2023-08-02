@@ -1,5 +1,7 @@
-# https://github.com/networkupstools/nut/issues/648
-# Manufacturer: https://powerwalker.com/?page=product&item=10122108&lang=en
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/648
+# Manufacturer:
+# DEVICE:URL: https://powerwalker.com/?page=product&item=10122108&lang=en
+
 battery.charge: 91
 battery.energysave: no
 battery.packs: 1

@@ -1,4 +1,4 @@
-# Source: https://github.com/networkupstools/nut/issues/1035
+# DEVICE:URL: https://github.com/networkupstools/nut/issues/1035
 # Shutdown sequences are tested and result is OK.
 # Not certain from report which of the listed models the data are from:
 
