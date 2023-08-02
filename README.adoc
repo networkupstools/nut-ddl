@@ -336,6 +336,10 @@ Keep in mind that each comment line is stripped of two leftmost characters
 (assuming the hash and space characters), and the rest is treated as usual
 asciidoc markup, e.g. keep blank lines to separate multiple paragraphs.
 +
+See also `DEVICE:COMMENT-BLOCK: <title>` which supports multiple pre-formatted
+block comments specifically for data dumps and tool output "screenshots" (with
+titles for particular subjects).
++
 --
 ----
 # DEVICE:COMMENT:
@@ -381,6 +385,32 @@ e.g.:
 # [ups]
 #   driver = blazer_ser
 #   port = /dev/ttyUSB0
+# DEVICE:EOC
+
+# DEVICE:COMMENT-BLOCK: `lsusb` listing
+# :; lsusb -vvv
+# ...
+# DEVICE:EOC
+
+# DEVICE:COMMENT-BLOCK: Variables per `upsrw ups@localhost` listing
+# TODO: Convert to RW:... and RO:...
+# :; upsrw ups
+# [battery.charge.low]
+# Remaining battery level when UPS switches to LB (percent)
+# Type: STRING
+# Maximum length: 10
+# Value: 10
+# ...
+# DEVICE:EOC
+
+# DEVICE:COMMENT-BLOCK: Commands per `upscmd -l ups@localhost` listing
+# TODO: Convert to CMD:...
+# :; upscmd -l ups
+# Instant commands supported on UPS [ups]:
+#
+# beeper.disable - Disable the UPS beeper
+# beeper.enable - Enable the UPS beeper
+#...
 # DEVICE:EOC
 ----
 --
