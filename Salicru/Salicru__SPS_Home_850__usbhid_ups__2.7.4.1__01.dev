@@ -8,6 +8,7 @@
 #
 # Note the weird "manufacturer" name of "1 ", which
 # seems to be true (same reported by other tools).
+# DEVICE:EOC
 
 # $ ./clients/upsc salicru@localhost
 battery.charge.low: 10

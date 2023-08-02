@@ -1,8 +1,6 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/1251
-# Vendor:
-# DEVICE:URL: http://ftp.assmann.com/pub/DN-/DN-170041___4016032365907
-# Standard software:
-# DEVICE:URL: https://www.power-software-download.com/viewpower.html
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1251
+# DEVICE:URL:VENDOR: http://ftp.assmann.com/pub/DN-/DN-170041___4016032365907
+# DEVICE:URL: link:https://www.power-software-download.com/viewpower.html[Bundled software: ViewPower]
 
 # DEVICE:COMMENT:
 # I tested the Digitus DN-170040 and DN-170041 with the blazer_usb
@@ -18,7 +16,7 @@
 # DEVICE:EOC
 
 # DEVICE:COMMENT-BLOCK: Driver configuration
-# ups.conf:
+# :; cat ups.conf
 # [digitus]
 #     driver = blazer_usb
 #     port = auto
@@ -64,4 +62,3 @@ ups.status: OL BYPASS
 ups.temperature: 24.3
 ups.type: online
 ups.vendorid: 0665
-

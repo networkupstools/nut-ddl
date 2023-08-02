@@ -1,7 +1,7 @@
 # DEVICE:URL: https://github.com/networkupstools/nut/issues/1416
 # DEVICE:URL: https://www.salicru.com/sps-850-adv-t.html
 
-# DEVICE:COMMENT-BLOCK: 
+# DEVICE:COMMENT: 
 # First report for new salicru HID subdriver from PR referenced
 # above for Salicru SPS 850 ADV T.
 #
@@ -50,7 +50,7 @@ ups.serial: 000000000000
 ups.status: OL
 ups.vendorid: 2e66
 
-# DEVICE:COMMENT: Variables
+# DEVICE:COMMENT-BLOCK: Variables
 # TODO: Convert to RW:...
 # :; upsrw salicru
 # [battery.charge.low]
@@ -66,7 +66,7 @@ ups.vendorid: 2e66
 # Value: 300
 # DEVICE:EOC
 
-# DEVICE:COMMENT: Commands (none reported)
+# DEVICE:COMMENT-BLOCK: Commands (none reported)
 # :; upscmd -l salicru
 # Instant commands supported on UPS [salicru]:
 # 

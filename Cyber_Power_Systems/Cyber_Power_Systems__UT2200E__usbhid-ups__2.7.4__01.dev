@@ -1,8 +1,9 @@
 # DEVICE:URL: https://github.com/networkupstools/nut/issues/556
-# DEVICE:URL: https://www.cyberpower.com/ww/en/product/sku/UT2200E
+# DEVICE:URL:VENDOR: https://www.cyberpower.com/ww/en/product/sku/UT2200E
 
 # DEVICE:COMMENT:
 # passed test.battery.start.quick
+#
 # poweroff and poweron can add later
 # DEVICE:EOC
 
@@ -46,7 +47,7 @@ ups.timer.shutdown: -60
 ups.timer.start: -60
 ups.vendorid: 0764
 
-# DEVICE:COMMENT: lsusb
+# DEVICE:COMMENT-BLOCK: `lsusb` listing
 # :; lsusb -v -s 007:002
 #     Bus 007 Device 002: ID 0764:0501 Cyber Power System, Inc. CP1500 AVR UPS
 #     Device Descriptor:
@@ -106,7 +107,7 @@ ups.vendorid: 0764
 #     bInterval 10
 # DEVICE:EOC
 
-# DEVICE:COMMENT: Variables
+# DEVICE:COMMENT-BLOCK: Variables
 # TODO: Convert to RW:...
 # :; upsrw cps1500avr
 #     [battery.charge.low]
@@ -146,7 +147,7 @@ ups.vendorid: 0764
 #     Value: 30
 # DEVICE:EOC
 
-# DEVICE:COMMENT: Commands
+# DEVICE:COMMENT-BLOCK: Commands
 # TODO: Convert to CMD:...   
 # :; upscmd -l cps1500avr
 #     Instant commands supported on UPS [cps1500avr]:

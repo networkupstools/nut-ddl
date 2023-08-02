@@ -1,6 +1,5 @@
 # DEVICE:URL: https://github.com/networkupstools/nut/issues/633
-# Vendor:
-# DEVICE:URL: http://pcmups.com.tw/eA/html/product/show.php?num=226&root=13&kind=105&page=1&keyword=
+# DEVICE:URL:VENDOR: http://pcmups.com.tw/eA/html/product/show.php?num=226&root=13&kind=105&page=1&keyword=
 
 # DEVICE:COMMENT:
 # Sometimes `ups.beeper.status: disabled` disappears from upsc output after
@@ -10,21 +9,25 @@
 #
 # When UPS in warning state, `beeper.disable` does not disable beeper.
 # Beeper could be disabled in this mode only by hardware button.
+#
+# Setting battery charge works with config file (because `upsrw` errors out)
+# as in the attached example.
+#
+# See also comments for Raptor 2000 with similar issues.
 # DEVICE:EOC
 
 # DEVICE:URL: https://github.com/networkupstools/nut/issues/634
 
 # DEVICE:COMMENT-BLOCK: Driver configuration
-# Setting battery charge works with config file (because `upsrw` errors out):
 # [RPT-600AP]
+#        # Setting battery charge works with config file
+#        # (because `upsrw` errors out)
 #        driver = usbhid-ups
 #        port = auto
 #        vendorid = 0d9f
 #        ignorelb
 #        override.battery.charge.low = 70
 #        override.battery.charge.warning = 80
-#
-# See also comments for Raptor 2000 with similar issues.
 # DEVICE:EOC
 
 # DEVICE:COMMENT-BLOCK: Notofication with COMMBAD driver restart
@@ -111,7 +114,7 @@ ups.timer.shutdown: 0
 ups.timer.start: 740160
 ups.vendorid: 0d9f
 
-# DEVICE:COMMENT: Variables
+# DEVICE:COMMENT-BLOCK: Variables
 # TODO: Convert to RW:...
 # :; upsrw RPT-600AP
 # [ups.delay.shutdown]
@@ -126,7 +129,7 @@ ups.vendorid: 0d9f
 # Value: 60
 # DEVICE:EOC
 
-# DEVICE:COMMENT: Commands
+# DEVICE:COMMENT-BLOCK: Commands
 # TODO: Convert to CMD:...
 # :; upscmd -l RPT-600AP
 # Instant commands supported on UPS [RPT-600AP]:

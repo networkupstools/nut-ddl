@@ -11,27 +11,29 @@
 # So the default values of 20 and 30 get rounded down so the UPS shuts
 # off immediately.
 #
-# The ondelay for this model doesn't work very well.
-# If you give it a value of 60 seconds, the UPS will power back
-# on the load after 60 seconds even if the mains power isn't back.
-# An ondelay=-1 disables the auto start behavior.
-# Setting an ondelay value of 0 seems to be the only useful value.
-# With ondelay=0 the UPS will start back up immediately if the power
-# is restored after the UPS shuts down, and it will restart the load
-# approximately 10 seconds after a shutdown if the power comes back
-# after the shutdown with delay command is sent.
+# The `ondelay` for this model doesn't work very well.
+#
+# * If you give it a value of 60 seconds, the UPS will power back
+#   on the load after 60 seconds even if the mains power isn't back.
+# * An `ondelay=-1` disables the auto start behavior.
+# * Setting an `ondelay` value of 0 seems to be the only useful value.
+#   With `ondelay=0` the UPS will start back up immediately if the power
+#   is restored after the UPS shuts down, and it will restart the load
+#   approximately 10 seconds after a shutdown if the power comes back
+#   after the shutdown with delay command is sent.
+#
 # I would suggest that if the default values are changed for cyberpower
-# models, that the ondelay be set to a default of 0, and the
-# offdelay be set to 60.
+# models, that the `ondelay` be set to a default of 0, and the
+# `offdelay` be set to 60.
 #
 # I've successfully tested the shutdown behavior with this UPS with
-# a FreeBSD system (pfSense firewall). The offdelay must be set greater
-# than 60 and the ondelay must be set to 0 for correct behavior.
+# a FreeBSD system (pfSense firewall). The `offdelay` must be set greater
+# than 60 and the `ondelay` must be set to 0 for correct behavior.
 # (FreeBSD doesn't remount into a RO mode during shutdown, so delayed
 # shutdown is absolutely needed to prevent disk corruption).
 #
 # One last note is that this system doesn't seem to have any nonvolatile
-# storage, any values set via upsrw are lost when the UPS is restarted.
+# storage, any values set via `upsrw` are lost when the UPS is restarted.
 # So if you want to tweak certain settings you will need to have a way
 # to reset them any time the UPS resets.
 # DEVICE:EOC
@@ -78,7 +80,7 @@ ups.timer.shutdown: -60
 ups.timer.start: -60
 ups.vendorid: 0764
 
-# DEVICE:COMMENT: Variables
+# DEVICE:COMMENT-BLOCK: Variables
 # TODO: Convert to RW:...
 # :; upsrw or500
 # [battery.charge.low]
@@ -118,7 +120,7 @@ ups.vendorid: 0764
 # Value: 30
 # DEVICE:EOC
 
-# DEVICE:COMMENT: Commands
+# DEVICE:COMMENT-BLOCK: Commands
 # TODO: Convert to CMD:...
 # :; upscmd -l or500
 # Instant commands supported on UPS [or500]:
