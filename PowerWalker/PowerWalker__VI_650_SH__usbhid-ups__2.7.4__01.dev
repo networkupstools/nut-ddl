@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/483
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/483
 
 # Here is the output from FreeNas 11.0-U3 :
 battery.charge: 100

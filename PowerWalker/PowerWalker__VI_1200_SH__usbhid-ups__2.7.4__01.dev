@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/646#issuecomment-939439743
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/646#issuecomment-939439743
 
 # Not sure what changes they made in the latest stable debian bullseye
 # using nut-server 2.7.4 version, but these ups are now using the MGE HID

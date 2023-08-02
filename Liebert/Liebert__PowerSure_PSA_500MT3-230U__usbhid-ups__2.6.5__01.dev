@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/601
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/601
 
 # :; lsusb | grep Liebert
 # Bus 001 Device 005: ID 10af:0001 Liebert Corp. PowerSure PSA UPS

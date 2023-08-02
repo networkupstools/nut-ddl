@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/537#issuecomment-1095620528
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/537#issuecomment-1095620528
 
 # [ups]
 #        driver = nutdrv_qx

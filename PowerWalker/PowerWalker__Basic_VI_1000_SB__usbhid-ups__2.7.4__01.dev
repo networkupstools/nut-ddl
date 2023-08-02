@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/818
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/818
 
 # PowerWalker Basic VI 1000 SB supported by usbhid-ups
 # Output from lsusb gives another name:

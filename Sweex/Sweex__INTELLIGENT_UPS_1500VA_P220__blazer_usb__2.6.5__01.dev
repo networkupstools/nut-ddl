@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/251
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/251
 
 battery.charge: 12
 battery.voltage: 21.40

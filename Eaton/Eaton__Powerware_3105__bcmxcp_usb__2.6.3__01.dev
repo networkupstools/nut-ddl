@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/117
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/117
 ambient.temperature.high: 137
 ambient.temperature.low: 34
 device.mfr: Eaton

@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/633
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/633
 # DEVICE:URL:VENDOR: http://pcmups.com.tw/eA/html/product/show.php?num=226&root=13&kind=105&page=1&keyword=
 
 # DEVICE:COMMENT:
@@ -16,7 +16,7 @@
 # See also comments for Raptor 2000 with similar issues.
 # DEVICE:EOC
 
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/634
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/634
 
 # DEVICE:COMMENT-BLOCK: Driver configuration
 # [RPT-600AP]

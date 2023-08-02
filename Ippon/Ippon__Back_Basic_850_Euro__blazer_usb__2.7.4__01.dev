@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/802
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/802
 
 # It seems like blazer_usb autodetect fails to guess correct protocol
 # for some reason, so subdirver had to be specified in ups.conf:

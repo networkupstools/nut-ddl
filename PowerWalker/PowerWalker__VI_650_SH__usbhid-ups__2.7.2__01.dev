@@ -1,4 +1,4 @@
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/483
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/483
 
 # Output from the PI running Armbian :
 battery.charge: 100
