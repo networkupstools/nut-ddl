@@ -367,6 +367,10 @@ A way to pass otherwise "un-classified" blocks of information which benefits
 from pre-formatting, such as `ups.conf` device configuration section examples,
 or "console screenshots". It may include a title (recommended for readability).
 +
+NOTE: For certain frequently seen content types there are special tags to take
+care of default title and possible other mark-up in the rendered documents.
+So it is not necessarily fully unstructured information after all.
++
 --
 ----
 # DEVICE:COMMENT-BLOCK: <title>
@@ -379,6 +383,18 @@ or "console screenshots". It may include a title (recommended for readability).
 e.g.:
 
 ----
+### For driver config snippets, especially if with useful overrides etc.:
+
+# DEVICE:COMMENT-BLOCK:UPSCONF: # title ignored
+# [ups]
+#   driver = blazer_ser
+#   port = /dev/ttyUSB0
+#   # Certain overrides were needed:
+# ...
+# DEVICE:EOC
+
+### or:
+
 # DEVICE:COMMENT-BLOCK: Driver configuration
 # :; cat /etc/nut/ups.conf
 #
@@ -387,13 +403,46 @@ e.g.:
 #   port = /dev/ttyUSB0
 # DEVICE:EOC
 
+
+### For `lsusb` dumps:
+
+# DEVICE:COMMENT-BLOCK:LSUSB: `lsusb -vvv` # optional title with exact command, possibly not `lsusb` per se on some OSes
+# ...
+# DEVICE:EOC
+
+### or:
+
 # DEVICE:COMMENT-BLOCK: `lsusb` listing
 # :; lsusb -vvv
 # ...
 # DEVICE:EOC
 
+
+### For service startup/shutdown log messages:
+
+# DEVICE:COMMENT-BLOCK:LOGS: Console messages of NUT driver startup # optional title with description of the log
+# ...
+# DEVICE:EOC
+
+### or:
+
+# DEVICE:COMMENT-BLOCK: Syslog of NUT startup
+# ...
+# DEVICE:EOC
+
+
+### For unstructured `upsrw` dumps:
+
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: # title ignored
+# [battery.charge.low]
+# Remaining battery level when UPS switches to LB (percent)
+# ...
+# DEVICE:EOC
+
+### or:
+
 # DEVICE:COMMENT-BLOCK: Variables per `upsrw ups@localhost` listing
-# TODO: Convert to RW:... and RO:...
+# TODO: Convert to RW:... and RO:... markup
 # :; upsrw ups
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
@@ -403,8 +452,18 @@ e.g.:
 # ...
 # DEVICE:EOC
 
+
+### For unstructured `upscmd` dumps:
+
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: # title ignored
+# beeper.disable - Disable the UPS beeper
+# ...
+# DEVICE:EOC
+
+### or:
+
 # DEVICE:COMMENT-BLOCK: Commands per `upscmd -l ups@localhost` listing
-# TODO: Convert to CMD:...
+# TODO: Convert to CMD:... markup
 # :; upscmd -l ups
 # Instant commands supported on UPS [ups]:
 #
