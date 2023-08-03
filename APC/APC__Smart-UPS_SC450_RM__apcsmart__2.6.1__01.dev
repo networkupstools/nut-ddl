@@ -77,7 +77,7 @@ ups.test.result: NO
 #RW:input.transfer.low:ENUM:"204"
 #RW:input.transfer.low:ENUM:"200"
 #RW:input.transfer.low:ENUM:"196"
-#RW:output.voltage.nominal:ENUM"230"
+#RW:output.voltage.nominal:ENUM:"230"
 #RW:ups.delay.shutdown:ENUM:"060"
 #RW:ups.delay.shutdown:ENUM:"180"
 #RW:ups.delay.shutdown:ENUM:"300"
