@@ -385,7 +385,9 @@ e.g.:
 ----
 ### For driver config snippets, especially if with useful overrides etc.:
 
-# DEVICE:COMMENT-BLOCK:UPSCONF: # title ignored
+# DEVICE:COMMENT-BLOCK:UPSCONF: # see comment below about optional title
+# > A single-token title is UPS name if no section in conf section,
+# > otherwise non-trivial title is pasted as a starting comment
 # [ups]
 #   driver = blazer_ser
 #   port = /dev/ttyUSB0
@@ -406,7 +408,9 @@ e.g.:
 
 ### For `lsusb` dumps:
 
-# DEVICE:COMMENT-BLOCK:LSUSB: `lsusb -vvv` # optional title with exact command, possibly not `lsusb` per se on some OSes
+# DEVICE:COMMENT-BLOCK:LSUSB: `lsusb -vvv` # see comment below about optional title
+# > Accepts optional title with exact command,
+# > possibly not even `lsusb` per se on some OSes
 # ...
 # DEVICE:EOC
 
@@ -420,7 +424,8 @@ e.g.:
 
 ### For service startup/shutdown log messages:
 
-# DEVICE:COMMENT-BLOCK:LOGS: Console messages of NUT driver startup # optional title with description of the log
+# DEVICE:COMMENT-BLOCK:LOGS: Console messages of NUT driver startup
+# > Accepts optional title with description of the log - used "as is"
 # ...
 # DEVICE:EOC
 
@@ -433,7 +438,9 @@ e.g.:
 
 ### For unstructured `upsrw` dumps:
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: # title ignored
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: # see comment below about optional title
+# > A single-token title is UPS name for example command,
+# > multi-token is pasted as a starting comment
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
 # ...
@@ -455,7 +462,9 @@ e.g.:
 
 ### For unstructured `upscmd` dumps:
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: # title ignored
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: # see comment below about optional title
+# > A single-token title is UPS name for example command,
+# > multi-token is pasted as a starting comment
 # beeper.disable - Disable the UPS beeper
 # ...
 # DEVICE:EOC
