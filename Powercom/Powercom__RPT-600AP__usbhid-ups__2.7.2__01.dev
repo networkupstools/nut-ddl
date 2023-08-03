@@ -117,7 +117,7 @@ ups.timer.shutdown: 0
 ups.timer.start: 740160
 ups.vendorid: 0d9f
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: RPT-600AP
 # [ups.delay.shutdown]
 # Interval to wait after shutdown with delay command (seconds)
 # Type: STRING
@@ -131,7 +131,7 @@ ups.vendorid: 0d9f
 # Value: 60
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: RPT-600AP
 # Instant commands supported on UPS [RPT-600AP]:
 # beeper.disable - Disable the UPS beeper
 # beeper.enable - Enable the UPS beeper

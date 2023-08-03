@@ -80,7 +80,7 @@ ups.timer.shutdown: -60
 ups.timer.start: -60
 ups.vendorid: 0764
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: or500
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
 # Type: STRING
@@ -118,7 +118,7 @@ ups.vendorid: 0764
 # Value: 30
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: or500
 # Instant commands supported on UPS [or500]:
 #
 # beeper.disable - Disable the UPS beeper

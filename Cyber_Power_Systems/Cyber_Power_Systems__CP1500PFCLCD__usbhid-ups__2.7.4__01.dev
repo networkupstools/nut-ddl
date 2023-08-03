@@ -42,7 +42,7 @@ ups.timer.shutdown: -60
 ups.timer.start: -60
 ups.vendorid: 0764
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: CP1500PFCLCD
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
 # Type: STRING
@@ -80,7 +80,7 @@ ups.vendorid: 0764
 # Value: 30
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: CP1500PFCLCD
 # Instant commands supported on UPS [CP1500PFCLCD]:
 # beeper.disable - Disable the UPS beeper
 # beeper.enable - Enable the UPS beeper

@@ -52,7 +52,7 @@ input.frequency.nominal: 50
 input.voltage: 245.6
 input.voltage.fault: 245.5
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: v7_ups
 # Instant commands supported on UPS [v7_ups]:
 # beeper.toggle - Description unavailable
 # load.off - Description unavailable

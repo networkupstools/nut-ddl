@@ -65,7 +65,7 @@ ups.type: online
 # Battery runtime will not be calculated (runtimecal not set)
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: dpk
 # Instant commands supported on UPS [dpk]:
 # beeper.toggle - Toggle the UPS beeper
 # load.off - Turn off the load immediately

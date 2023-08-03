@@ -107,7 +107,7 @@ ups.vendorid: 0764
 #     bInterval 10
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: cps1500avr
 #     [battery.charge.low]
 #     Remaining battery level when UPS switches to LB (percent)
 #     Type: STRING
@@ -145,7 +145,7 @@ ups.vendorid: 0764
 #     Value: 30
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: cps1500avr
 #     Instant commands supported on UPS [cps1500avr]:
 #     beeper.disable - Disable the UPS beeper
 #     beeper.enable - Enable the UPS beeper

@@ -56,7 +56,7 @@ ups.timer.start: 0
 ups.type: online
 ups.vendorid: 0463
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: eaton9px
 # [battery.charge.low]
 # Remaining battery level when UPS switches to LB (percent)
 # Type: STRING
@@ -126,7 +126,7 @@ ups.vendorid: 0463
 # Value: 01:43:33
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: eaton9px
 # Instant commands supported on UPS [eaton9px]:
 # beeper.disable - Disable the UPS beeper
 # beeper.enable - Enable the UPS beeper

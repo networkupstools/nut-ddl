@@ -33,7 +33,7 @@ ups.status: OL
 ups.type: offline / line interactive
 ups.vendorid: 0665
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: salicru
 # [ups.delay.shutdown]
 # Interval to wait after shutdown with delay command (seconds)
 # Type: RANGE
@@ -45,7 +45,7 @@ ups.vendorid: 0665
 # Option: "60-599940" SELECTED
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: salicru
 # Instant commands supported on UPS [salicru]:
 # beeper.toggle - Toggle the UPS beeper
 # load.off - Turn off the load immediately

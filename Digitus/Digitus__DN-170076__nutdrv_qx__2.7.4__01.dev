@@ -93,7 +93,7 @@ ups.status: OL
 ups.type: offline / line interactive
 ups.vendorid: 0001
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: digitus
 #  Instant commands supported on UPS [digitus]:
 #  beeper.toggle - Toggle the UPS beeper            # works (with megatec protocol)
 #  load.off - Turn off the load immediately             # did not work, syslog tells 'instcmd: command [load.off] handled' but nothing happens

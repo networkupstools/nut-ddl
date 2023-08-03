@@ -47,7 +47,7 @@ ups.timer.reboot: -1
 ups.timer.shutdown: -1
 ups.vendorid: 051d
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: worldbyte
 # Instant commands supported on UPS [worldbyte]:
 # beeper.disable - Disable the UPS beeper
 # beeper.enable - Enable the UPS beeper
