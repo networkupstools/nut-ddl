@@ -1,5 +1,7 @@
 all: check
 
+# NOTE: The checks below are rudimentary, just to filter away the most
+# blatant issues. More diligent ones are in nut-website:nut-ddl.py parser.
 check: check-filename-structure check-content-markup
 
 html: index.html
