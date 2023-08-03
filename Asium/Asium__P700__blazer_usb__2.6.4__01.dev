@@ -1,5 +1,5 @@
-# DEVICE:URL: http://lists.alioth.debian.org/pipermail/nut-upsdev/2015-September/007086.html
-# DEVICE:URL: http://news.gmane.org/find-root.php?message_id=340651728.169083.1442671724422.JavaMail.yahoo%40mail.yahoo.com
+# DEVICE:URL:REPORT: http://lists.alioth.debian.org/pipermail/nut-upsdev/2015-September/007086.html
+# DEVICE:URL:REPORT: http://news.gmane.org/find-root.php?message_id=340651728.169083.1442671724422.JavaMail.yahoo%40mail.yahoo.com
 
 battery.charge: 100
 battery.voltage: 13.50

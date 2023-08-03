@@ -1,4 +1,4 @@
-# DEVICE:URL: https://lists.alioth.debian.org/pipermail/nut-upsuser/2008-November/004547.html
+# DEVICE:URL:REPORT: https://lists.alioth.debian.org/pipermail/nut-upsuser/2008-November/004547.html
 
 # DEVICE:COMMENT:
 # The commands to shutdown the UPS don't seem to work: 'shutdown.stayoff',
