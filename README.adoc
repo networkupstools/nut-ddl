@@ -272,7 +272,7 @@ Note that the colon after `#COMMENT` is not mandatory.
 --
 
 Vars comments::
-Comments that are binded to a particular variable.
+Comments that are bound to a particular variable.
 +
 --
 ----
@@ -283,7 +283,7 @@ Comments that are binded to a particular variable.
 # <var.name>:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
@@ -304,7 +304,7 @@ e.g.:
 --
 
 Commands comments::
-Comments binded to a particular command.
+Comments bound to a particular command.
 +
 --
 ----
@@ -315,7 +315,7 @@ Comments binded to a particular command.
 # <command.name>:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
@@ -336,6 +336,10 @@ Keep in mind that each comment line is stripped of two leftmost characters
 (assuming the hash and space characters), and the rest is treated as usual
 asciidoc markup, e.g. keep blank lines to separate multiple paragraphs.
 +
+See also `DEVICE:COMMENT-BLOCK: <title>` which supports multiple pre-formatted
+block comments specifically for data dumps and tool output "screenshots" (with
+titles for particular subjects).
++
 --
 ----
 # DEVICE:COMMENT:
@@ -345,7 +349,7 @@ asciidoc markup, e.g. keep blank lines to separate multiple paragraphs.
 # DEVICE:EOC
 ----
 
-(The trailing colon after `:COMMENT` is not mandatory.)
+(The trailing colon after `:COMMENT` or `:EOC` is not mandatory.)
 
 e.g.:
 
@@ -359,9 +363,13 @@ e.g.:
 --
 
 Device comment block::
-A way to pass otherwise unclassified blocks of information which benefits
+A way to pass otherwise "un-classified" blocks of information which benefits
 from pre-formatting, such as `ups.conf` device configuration section examples,
 or "console screenshots". It may include a title (recommended for readability).
++
+NOTE: For certain frequently seen content types there are special tags to take
+care of default title and possible other mark-up in the rendered documents.
+So it is not necessarily fully unstructured information after all.
 +
 --
 ----
@@ -375,12 +383,102 @@ or "console screenshots". It may include a title (recommended for readability).
 e.g.:
 
 ----
+### For driver config snippets, especially if with useful overrides etc.:
+
+# DEVICE:COMMENT-BLOCK:UPSCONF: # see comment below about optional title
+# > A single-token title is UPS name if no section in conf section,
+# > otherwise non-trivial title is pasted as a starting comment
+# [ups]
+#   driver = blazer_ser
+#   port = /dev/ttyUSB0
+#   # Certain overrides were needed:
+# ...
+# DEVICE:EOC
+
+### or:
+
 # DEVICE:COMMENT-BLOCK: Driver configuration
 # :; cat /etc/nut/ups.conf
 #
 # [ups]
 #   driver = blazer_ser
 #   port = /dev/ttyUSB0
+# DEVICE:EOC
+
+
+### For `lsusb` dumps:
+
+# DEVICE:COMMENT-BLOCK:LSUSB: `lsusb -vvv` # see comment below about optional title
+# > Accepts optional title with exact command,
+# > possibly not even `lsusb` per se on some OSes
+# ...
+# DEVICE:EOC
+
+### or:
+
+# DEVICE:COMMENT-BLOCK: `lsusb` listing
+# :; lsusb -vvv
+# ...
+# DEVICE:EOC
+
+
+### For service startup/shutdown log messages:
+
+# DEVICE:COMMENT-BLOCK:LOGS: Console messages of NUT driver startup
+# > Accepts optional title with description of the log - used "as is"
+# ...
+# DEVICE:EOC
+
+### or:
+
+# DEVICE:COMMENT-BLOCK: Syslog of NUT startup
+# ...
+# DEVICE:EOC
+
+
+### For unstructured `upsrw` dumps:
+
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: # see comment below about optional title
+# > A single-token title is UPS name for example command,
+# > multi-token is pasted as a starting comment
+# [battery.charge.low]
+# Remaining battery level when UPS switches to LB (percent)
+# ...
+# DEVICE:EOC
+
+### or:
+
+# DEVICE:COMMENT-BLOCK: Variables per `upsrw ups@localhost` listing
+# TODO: Convert to RW:... and RO:... markup
+# :; upsrw ups
+# [battery.charge.low]
+# Remaining battery level when UPS switches to LB (percent)
+# Type: STRING
+# Maximum length: 10
+# Value: 10
+# ...
+# DEVICE:EOC
+
+
+### For unstructured `upscmd` dumps:
+
+# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD: # see comment below about optional title
+# > A single-token title is UPS name for example command,
+# > multi-token is pasted as a starting comment
+# beeper.disable - Disable the UPS beeper
+# ...
+# DEVICE:EOC
+
+### or:
+
+# DEVICE:COMMENT-BLOCK: Commands per `upscmd -l ups@localhost` listing
+# TODO: Convert to CMD:... markup
+# :; upscmd -l ups
+# Instant commands supported on UPS [ups]:
+#
+# beeper.disable - Disable the UPS beeper
+# beeper.enable - Enable the UPS beeper
+#...
 # DEVICE:EOC
 ----
 --
@@ -390,16 +488,23 @@ Further information about this device or report can be found at specified URL,
 e.g. vendor product page, NUT issue tracker or mailing list archive page where
 the report originated, etc. Many URLs may be listed, but only one per tag.
 +
+Use of specific `DEVICE:URL:VENDOR:` (product/vendor/manufacturer pages) and
+`DEVICE:URL:REPORT:` (GitHub issue or pull request, mailing list archive, blog
+etc. where the reported information originated and more clues may appear later)
+is encouraged over the less specific `DEVICE:URL:` used for additional info.
++
 --
 ----
+# DEVICE:URL:VENDOR:<link>
+# DEVICE:URL:REPORT:<link>
 # DEVICE:URL:<link>
 ----
 
 e.g.:
 
 ----
-# DEVICE:URL: https://github.com/networkupstools/nut/issues/867
-# DEVICE:URL: https://www.njoy.ro/UPS/keen-600
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/867
+# DEVICE:URL:VENDOR: https://www.njoy.ro/UPS/keen-600
 ----
 --
 
@@ -609,7 +714,7 @@ Note that the colon after `#COMMENT` is not mandatory.
 --
 
 Vars comments::
-Comments that are binded to a particular variable.
+Comments that are bound to a particular variable.
 +
 --
 ----
@@ -641,7 +746,7 @@ e.g.:
 --
 
 Commands comments::
-Comments binded to a particular command.
+Comments bound to a particular command.
 +
 --
 ----
