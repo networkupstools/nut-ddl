@@ -60,20 +60,20 @@ ups.timer.start: 0
 ups.type: online
 ups.vendorid: 2e66
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSRW:
-# $ upsrw -s battery.runtime.low Unity
+# DEVICE:COMMENT-BLOCK: Check that UPS variable setting works
+# :; upsrw -s battery.runtime.low Unity
 # Enter new value for battery.runtime.low: 240
 # OK
 #
-# $ upsc Unity battery.runtime.low
+# :; upsc Unity battery.runtime.low
 # 240
 #
 # ### I successfully set the `ups.delay.shutdown` from 20 to 120
 # ### via `upsrw -s ups.delay.shutdown Unity` command
 # DEVICE:EOC
 
-# DEVICE:COMMENT-BLOCK:FIXME:UPSCMD:
-# $ upscmd -l Unity
+# DEVICE:COMMENT-BLOCK: Check that UPS commands work
+# :; upscmd -l Unity
 # Instant commands supported on UPS [Unity]:
 #
 # load.off - Turn off the load immediately
