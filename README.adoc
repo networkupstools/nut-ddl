@@ -304,7 +304,7 @@ e.g.:
 --
 
 Commands comments::
-Comments binded to a particular command.
+Comments bound to a particular command.
 +
 --
 ----
@@ -714,7 +714,7 @@ Note that the colon after `#COMMENT` is not mandatory.
 --
 
 Vars comments::
-Comments that are binded to a particular variable.
+Comments that are bound to a particular variable.
 +
 --
 ----
@@ -746,7 +746,7 @@ e.g.:
 --
 
 Commands comments::
-Comments binded to a particular command.
+Comments bound to a particular command.
 +
 --
 ----
