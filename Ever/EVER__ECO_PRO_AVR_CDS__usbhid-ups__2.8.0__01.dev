@@ -70,9 +70,9 @@ outlet.1.switchable: no
 output.current: 0
 output.frequency: 50
 output.frequency.nominal: 50
+output.powerfactor: 0	#BAD: originally reported as `powerfactor` due to a bug in 2.8.0 release
 output.voltage: 230
 output.voltage.nominal: 230
-powerfactor: 0
 ups.delay.shutdown: 20
 ups.load: 0
 ups.mfr: EVER
