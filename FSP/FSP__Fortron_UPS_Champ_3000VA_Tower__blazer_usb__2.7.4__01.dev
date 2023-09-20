@@ -19,7 +19,7 @@
 # :; sudo nut-scanner -U
 # Neon library not found. XML search disabled.
 # IPMI library not found. IPMI search disabled.
-#
+# 
 # Scanning USB bus.
 # [nutdev1]
 # 	driver = "blazer_usb"
