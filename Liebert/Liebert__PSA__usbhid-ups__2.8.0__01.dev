@@ -6,7 +6,7 @@
 # while it shows correct information with NUT v2.7.4/libusb-0.1/armv7l.
 # It is anticipated that NUT v2.8.2 or later would include a fix.
 #
-# > Except for those marked, all values in 2.8.0 are correct.
+# NOTE: Except for those marked, all values in 2.8.0 are correct.
 # DEVICE:EOC
 
 # DEVICE:COMMENT-BLOCK: Driver versions
