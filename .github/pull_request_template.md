@@ -53,8 +53,10 @@ and similar consumption of info, it is better than nothing for human readers.
   with a USB `subdriver`), example section content is welcome as a comment.
 
 - [ ] For a newly discovered supported device, a sibling PR for the main
-  NUT codebase (at least `docs/driver.list.in`, or possibly VID/PID and
-  other auto-detection mapping tables in the driver sources) is welcome.
+  NUT codebase (at least
+  [`docs/driver.list.in`](https://github.com/networkupstools/nut/blob/master/data/driver.list.in),
+  or possibly VID/PID and other auto-detection mapping tables in the driver
+  sources) is welcome.
 
-- [ ] This PR is linked to relevant issue(s) and/or PRs in the NUT project
-  if applicable.
+- [ ] This PR is linked to relevant issue(s) and/or PRs in the NUT project,
+  if applicable (new driver submissions, bug fixes/discussions, etc.).
