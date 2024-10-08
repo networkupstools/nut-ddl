@@ -1,0 +1,43 @@
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1673#issue-1402941180
+
+# DEVICE:COMMENT:
+# First report with NUT v2.7.4 was about failure to shut down the
+# system during FSD processing. This got fixed later in discussion
+# due to a mix of newer NUT v2.8.0 and some customized `nutshutdown`
+# scripting.
+# DEVICE:EOC
+
+# DEVICE:COMMENT-BLOCK:UPSCONF:
+# [greencell]
+#   driver = "nutdrv_qx"
+#   port = "auto"
+#   desc = "Green Cell UPS 2000VA"
+#   default.battery.voltage.high = 25.60
+#   default.battery.voltage.low = 20.80
+# DEVICE:EOC
+
+battery.charge: 100
+battery.voltage: 28.00
+battery.voltage.high: 25.60
+battery.voltage.low: 20.80
+device.type: ups
+driver.name: nutdrv_qx
+driver.parameter.pollfreq: 30
+driver.parameter.pollinterval: 2
+driver.parameter.port: auto
+driver.parameter.synchronous: no
+driver.version: 2.7.4
+driver.version.data: Q1 0.07
+driver.version.internal: 0.28
+input.frequency: 50.0
+input.voltage: 240.5
+input.voltage.fault: 245.5
+output.voltage: 240.5
+ups.beeper.status: enabled
+ups.delay.shutdown: 30
+ups.delay.start: 180
+ups.load: 1
+ups.productid: 0000
+ups.status: OL
+ups.type: offline / line interactive
+ups.vendorid: 0001
