@@ -1,0 +1,44 @@
+# DEVICE:URL:REPORT: https://github.com/networkupstools/nut/issues/1623#issuecomment-1247231973
+
+# DEVICE:COMMENT
+# That issue discussion led to a fix of device support (lacking in NUT v2.8.0)
+# that became part of NUT v2.8.1.
+#
+# Below is a data dump while the device is on battery.
+# DEVICE:EOC
+
+battery.charge: 77
+battery.voltage: 12.40
+battery.voltage.high: 13.00
+battery.voltage.low: 10.40
+battery.voltage.nominal: 12.0
+device.type: ups
+driver.name: nutdrv_qx
+driver.parameter.bus: 001
+driver.parameter.pollfreq: 30
+driver.parameter.pollinterval: 2
+driver.parameter.port: auto
+driver.parameter.productid: 5161
+driver.parameter.protocol: voltronic-qs
+driver.parameter.synchronous: auto
+driver.parameter.vendorid: 0665
+driver.version: Windows-v2.8.0-alpha3-803-gbba09ca24
+driver.version.data: Voltronic-QS 0.08
+driver.version.internal: 0.32
+driver.version.usb: libusb-1.0.24 (API: 0x1000108)
+input.voltage: 16.9
+input.voltage.fault: 16.9
+output.current.nominal: 3.0
+output.frequency: 50.0
+output.frequency.nominal: 50
+output.voltage: 228.5
+output.voltage.nominal: 230
+ups.beeper.status: enabled
+ups.delay.shutdown: 30
+ups.delay.start: 180
+ups.firmware.aux: PM-H
+ups.load: 10
+ups.productid: 5161
+ups.status: OB
+ups.type: offline / line interactive
+ups.vendorid: 0665
