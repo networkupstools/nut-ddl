@@ -35,6 +35,9 @@ check-content-markup:
 	export NUT_DDL_PEDANTIC_DECLARATIONS NUT_DDL_REQUIRE_MANPAGES; \
 	find . -type f -name '*.dev' | ( \
 		echo "`date -u`: Sanity-checking the *.dev files..."; \
+		if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
+			echo "`date -u`: will use $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" ; \
+		fi ; \
 		FAILED=""; \
 		PASSED=""; \
 		while read F ; do \
