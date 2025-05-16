@@ -10,8 +10,9 @@
 # DEVICE:EOC
 
 # DEVICE:COMMENT-BLOCK:UPSCONF:
-# driver = nutdrv_qx
-# port = "/dev/ttyACM0"
+# [tsshara]
+# 	driver = nutdrv_qx
+# 	port = "/dev/ttyACM0"
 # DEVICE:EOC
 
 # :; upsc tsshara
