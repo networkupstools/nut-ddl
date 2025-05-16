@@ -21,6 +21,10 @@ jobs:
           run: |
               cd ../nut-website && \
               autoreconf -ifv && \
-              ./configure
+              ./configure && \
+              if [ ! -s tools/nut-ddl.py ] && [ -s tools/nut-ddl.py.in ] ; then \
+                  cp -pf tools/nut-ddl.py.in tools/nut-ddl.py ; \
+              fi ; \
+              chmod +x tools/nut-ddl.py
         - name: run sanity checks
           run: NUT_WEBSITE_DIR=../nut-website make check
