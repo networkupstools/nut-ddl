@@ -20,7 +20,7 @@ jobs:
         - name: prepare nut-website repo
           run: |
               cd ../nut-website && \
-              ./autoreconf -ifv && \
+              autoreconf -ifv && \
               ./configure
         - name: run sanity checks
           run: NUT_WEBSITE_DIR=../nut-website make check
