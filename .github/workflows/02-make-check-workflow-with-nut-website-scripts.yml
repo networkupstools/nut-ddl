@@ -31,4 +31,4 @@ jobs:
               fi ; \
               chmod +x tools/nut-ddl.py
         - name: run sanity checks
-          run: NUT_WEBSITE_DIR=../nut-website make check
+          run: make NUT_WEBSITE_DIR="`pwd`/../nut-website" check
