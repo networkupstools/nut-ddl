@@ -19,8 +19,8 @@ jobs:
             path: nut-website
         - name: prepare nut-website repo
           run: |
-              cd ~/nut-website && \
+              cd ~/nut-ddl/nut-website && \
               ./autoreconf -ifv && \
               ./configure
         - name: run sanity checks
-          run: NUT_WEBSITE_DIR=~/nut-website make check
+          run: NUT_WEBSITE_DIR=../nut-website make check
