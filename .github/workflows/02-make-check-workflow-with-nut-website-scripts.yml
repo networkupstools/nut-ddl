@@ -1,0 +1,25 @@
+name: 02 - make check Workflow with nut-website scripts
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout nut-ddl repo
+          uses: actions/checkout@v4
+        - name: checkout nut-website repo
+          uses: actions/checkout@v4
+          with:
+            name: networkupstools/nut-website
+        - name: prepare nut-website repo
+          run: |
+              cd ~/nut-website && \
+              ./autoreconf -ifv && \
+              ./configure
+        - name: run sanity checks
+          run: NUT_WEBSITE_DIR=~/nut-website make check
