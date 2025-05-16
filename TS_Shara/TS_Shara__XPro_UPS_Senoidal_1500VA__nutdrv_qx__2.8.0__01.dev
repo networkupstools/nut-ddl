@@ -12,6 +12,7 @@
 # DEVICE:COMMENT-BLOCK:UPSCONF:
 # driver = nutdrv_qx
 # port = "/dev/ttyACM0"
+# DEVICE:EOC
 
 # :; upsc tsshara
 battery.charge: 100
