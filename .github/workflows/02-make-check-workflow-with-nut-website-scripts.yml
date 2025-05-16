@@ -19,8 +19,8 @@ jobs:
             git clone https://github.com/networkupstools/nut-website
         - name: install tools
           run: |
-                apt update || exit ; \
-                apt install build-essential python3 make autoconf automake libtool pkg-config
+                sudo apt update || exit ; \
+                sudo apt install build-essential python3 make autoconf automake libtool pkg-config
         - name: prepare nut-website repo
           run: |
               cd ../nut-website && \
