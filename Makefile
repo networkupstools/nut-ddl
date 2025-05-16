@@ -1,5 +1,9 @@
 all: check
 
+# Optional, might not exist; can be set by caller to another location
+# (e.g. with GitHub Actions self-test)
+NUT_WEBSITE_DIR=..
+
 # NOTE: The checks below are rudimentary, just to filter away the most
 # blatant issues. More diligent ones are in nut-website:nut-ddl.py parser.
 check: check-filename-structure check-content-markup
@@ -7,7 +11,7 @@ check: check-filename-structure check-content-markup
 html: index.html
 
 index.html: .DUMMY
-	[ -s ../Makefile ] && [ -x ../tools/nut-ddl.py ] # error out if not building along with nut-website
+	[ -s $(NUT_WEBSITE_DIR)/Makefile ] && [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] # error out if not building along with nut-website
 	D="`pwd`" && D="`basename "$$D"`" && [ -n "$$D" ] || D="ddl" ; \
 	cd .. && $(MAKE) $(MAKE_FLAGS) $(AM_FLAGS) "$$D/index.html"
 
@@ -26,11 +30,21 @@ check-filename-structure:
 check-content-markup:
 	LANG=C; LC_ALL=C; TZ=UTC; \
 	export LANG LC_ALL TZ ; \
+	NUT_DDL_PEDANTIC_DECLARATIONS=True ; \
+	NUT_DDL_REQUIRE_MANPAGES=False ; \
+	export NUT_DDL_PEDANTIC_DECLARATIONS NUT_DDL_REQUIRE_MANPAGES; \
 	find . -type f -name '*.dev' | ( \
 		echo "`date -u`: Sanity-checking the *.dev files..."; \
 		FAILED=""; \
 		PASSED=""; \
 		while read F ; do \
+			if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
+				RES=0 ; $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" || RES=$$? ; \
+				rm -f "$$F.tmp.html" ; \
+				if [ "$$RES" != 0 ] ; then \
+					echo "^^^ $$F" && FAILED="$$FAILED $$F" && continue; \
+				fi ; \
+			fi ; \
 			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' && echo "^^^ $$F" && FAILED="$$FAILED $$F" && continue; \
 			PASSED="$$PASSED $$F"; \
 		done; \
