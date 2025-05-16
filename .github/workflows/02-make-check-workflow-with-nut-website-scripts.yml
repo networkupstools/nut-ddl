@@ -13,10 +13,10 @@ jobs:
         - name: checkout nut-ddl repo
           uses: actions/checkout@v4
         - name: checkout nut-website repo
-          uses: actions/checkout@v4
-          with:
-            repository: networkupstools/nut-website
-            path: ../nut-website
+          run: |
+            cd .. || exit ; \
+            rm -rf nut-website || true ; \
+            git clone https://github.com/networkupstools/nut-website
         - name: prepare nut-website repo
           run: |
               cd ../nut-website && \
