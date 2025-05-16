@@ -25,7 +25,7 @@ jobs:
           run: |
               cd ../nut-website && \
               autoreconf -ifv && \
-              ./configure && \
+              ./configure || echo "CONFIGURE FAILED, WILL TRY DIRECTLY" >&2 ; \
               if [ ! -s tools/nut-ddl.py ] && [ -s tools/nut-ddl.py.in ] ; then \
                   cp -pf tools/nut-ddl.py.in tools/nut-ddl.py ; \
               fi ; \
