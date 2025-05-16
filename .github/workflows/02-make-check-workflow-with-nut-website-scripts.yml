@@ -15,7 +15,7 @@ jobs:
         - name: checkout nut-website repo
           uses: actions/checkout@v4
           with:
-            name: networkupstools/nut-website
+            repository: networkupstools/nut-website
         - name: prepare nut-website repo
           run: |
               cd ~/nut-website && \
