@@ -38,24 +38,25 @@ check-content-markup:
 	NUT_DDL_REQUIRE_MANPAGES=False ; \
 	export NUT_DDL_PEDANTIC_DECLARATIONS NUT_DDL_REQUIRE_MANPAGES; \
 	find . -type f -name '*.dev' | ( \
-		echo "`date -u`: Sanity-checking the *.dev files..."; \
+		echo "`date -u`: Sanity-checking the *.dev files..." >&2 ; \
 		if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
-			echo "`date -u`: will use $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" ; \
+			echo "`date -u`: will use $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" >&2 ; \
 		fi ; \
 		FAILED=""; \
 		PASSED=""; \
 		while read F ; do \
 			if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
-				RES=0 ; $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" || RES=$$? ; \
+				RES=0 ; $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" </dev/null >&2 || RES=$$? ; \
 				rm -f "$$F.tmp.html" ; \
 				if [ "$$RES" != 0 ] ; then \
-					echo "^^^ $$F" && FAILED="$$FAILED $$F" && continue; \
+					echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && continue; \
 				fi ; \
 			fi ; \
-			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' && echo "^^^ $$F" && FAILED="$$FAILED $$F" && continue; \
+			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' >&2 && echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && continue; \
 			PASSED="$$PASSED $$F"; \
 		done; \
-		if [ -n "$$FAILED" ]; then echo "`date -u`: FAILED sanity-check in following file(s) : $$FAILED" >&2; exit 1; fi; \
+		if [ -n "$$FAILED" ]; then echo "`date -u`: FAILED sanity-check (got RES=$$RES) in following file(s) : $$FAILED" >&2; exit 1; fi; \
+		if [ x"$$RES" != x0 ]; then echo "`date -u`: FAILED sanity-check : got RES=$$RES" >&2; exit $$RES; fi; \
 		echo "`date -u`: OK : All *.dev files have passed the basic sanity check : $$PASSED"; \
 		exit 0; \
 	)
