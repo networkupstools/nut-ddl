@@ -4,6 +4,10 @@ all: check
 # (e.g. with GitHub Actions self-test)
 NUT_WEBSITE_DIR=..
 
+# Optionally allow the caller to customize the python interpreter to
+# use for nut-ddl.py:
+NUT_DDL_PYTHON=
+
 # NOTE: The checks below are rudimentary, just to filter away the most
 # blatant issues. More diligent ones are in nut-website:nut-ddl.py parser.
 check: check-filename-structure check-content-markup
@@ -36,13 +40,13 @@ check-content-markup:
 	find . -type f -name '*.dev' | ( \
 		echo "`date -u`: Sanity-checking the *.dev files..."; \
 		if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
-			echo "`date -u`: will use $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" ; \
+			echo "`date -u`: will use $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" ; \
 		fi ; \
 		FAILED=""; \
 		PASSED=""; \
 		while read F ; do \
 			if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
-				RES=0 ; $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" || RES=$$? ; \
+				RES=0 ; $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" || RES=$$? ; \
 				rm -f "$$F.tmp.html" ; \
 				if [ "$$RES" != 0 ] ; then \
 					echo "^^^ $$F" && FAILED="$$FAILED $$F" && continue; \
