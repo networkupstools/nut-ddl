@@ -23,9 +23,11 @@ jobs:
                 sudo apt install build-essential python3 make autoconf autoconf-archive automake libtool m4 pkg-config
         - name: prepare nut-website repo
           run: |
-              cd ../nut-website && \
-              autoreconf -ifv && \
-              ./configure || echo "CONFIGURE FAILED, WILL TRY DIRECTLY" >&2 ; \
+              cd ../nut-website || exit ; \
+              if grep -E '@[^@][^@]*@' ../tools/nut-ddl.py.in ; then \
+                  autoreconf -ifv && \
+                  ./configure || echo "CONFIGURE FAILED, WILL TRY DIRECTLY" >&2 ; \
+              fi ; \
               if [ ! -s tools/nut-ddl.py ] && [ -s tools/nut-ddl.py.in ] ; then \
                   cp -pf tools/nut-ddl.py.in tools/nut-ddl.py ; \
               fi ; \
