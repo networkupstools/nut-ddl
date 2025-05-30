@@ -1,0 +1,36 @@
+name: 02 - make check Workflow with nut-website scripts
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout nut-ddl repo
+          uses: actions/checkout@v4
+        - name: checkout nut-website repo
+          run: |
+            cd .. || exit ; \
+            rm -rf nut-website || true ; \
+            git clone https://github.com/networkupstools/nut-website
+        - name: install tools
+          run: |
+                sudo apt update || exit ; \
+                sudo apt install build-essential python3 make autoconf autoconf-archive automake libtool m4 pkg-config
+        - name: prepare nut-website repo
+          run: |
+              cd ../nut-website || exit ; \
+              if grep -E '@[^@][^@]*@' ../tools/nut-ddl.py.in ; then \
+                  autoreconf -ifv && \
+                  ./configure || echo "CONFIGURE FAILED, WILL TRY DIRECTLY" >&2 ; \
+              fi ; \
+              if [ ! -s tools/nut-ddl.py ] && [ -s tools/nut-ddl.py.in ] ; then \
+                  cp -pf tools/nut-ddl.py.in tools/nut-ddl.py ; \
+              fi ; \
+              chmod +x tools/nut-ddl.py
+        - name: run sanity checks
+          run: make NUT_WEBSITE_DIR="`pwd`/../nut-website" check
