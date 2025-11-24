@@ -16,14 +16,14 @@ html: index.html
 
 index.html: .DUMMY
 	[ -s $(NUT_WEBSITE_DIR)/Makefile ] && [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] # error out if not building along with nut-website
-	D="`pwd`" && D="`basename "$$D"`" && [ -n "$$D" ] || D="ddl" ; \
+	D="`pwd`" && D="`basename \"$$D\"`" && [ -n "$$D" ] || D="ddl" ; \
 	cd .. && $(MAKE) $(MAKE_FLAGS) $(AM_FLAGS) "$$D/index.html"
 
 check-filename-structure:
 	LANG=C; LC_ALL=C; TZ=UTC; \
 	export LANG LC_ALL TZ ; \
 	( find . -name '*.dev*' -o -name '*.nds*' | grep -E -v '\.(dev|nds)\.txt$$' | sort -n | while IFS='' read F ; do \
-		MASK="`basename "$$F" | sed 's,^\(..*\)__\(..*\)__\(..*\)__\([0-9]..*\)__\([0-9][0-9]*\)\.\(dev\|nds\),MFG__MOD__DRV__NUTVER__REPNUM,'`" \
+		MASK="`basename \"$$F\" | sed 's,^\(..*\)__\(..*\)__\(..*\)__\([0-9]..*\)__\([0-9][0-9]*\)\.\(dev\|nds\),MFG__MOD__DRV__NUTVER__REPNUM,'`" \
 		&& [ "$$MASK" = "MFG__MOD__DRV__NUTVER__REPNUM" ] \
 		&& echo "FILENAME OK: $$F" \
 		|| { echo "FILENAME STRUCTURE FAILED: $$F ; EXPECTED:" >&2; \
