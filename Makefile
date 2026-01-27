@@ -44,19 +44,21 @@ check-content-markup:
 		fi ; \
 		FAILED=""; \
 		PASSED=""; \
+		WORSTRES=0; \
 		while read F ; do \
 			if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
 				RES=0 ; $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py "$$F" "$$F.tmp.html" </dev/null >&2 || RES=$$? ; \
 				rm -f "$$F.tmp.html" ; \
 				if [ "$$RES" != 0 ] ; then \
+					WORSTRES=$$RES; \
 					echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && continue; \
 				fi ; \
 			fi ; \
-			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' >&2 && echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && RES=2 && continue; \
+			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' >&2 && echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && WORSTRES=2 && continue; \
 			PASSED="$$PASSED $$F"; \
 		done; \
-		if [ -n "$$FAILED" ]; then echo "`date -u`: FAILED sanity-check (got RES=$$RES) in following file(s) : $$FAILED" >&2; exit 1; fi; \
-		if [ x"$$RES" != x0 ]; then echo "`date -u`: FAILED sanity-check : got RES=$$RES" >&2; exit $$RES; fi; \
+		if [ -n "$$FAILED" ]; then echo "`date -u`: FAILED sanity-check (got WORSTRES=$$WORSTRES) in following file(s) : $$FAILED" >&2; exit 1; fi; \
+		if [ x"$$WORSTRES" != x0 ]; then echo "`date -u`: FAILED sanity-check : got WORSTRES=$$WORSTRES" >&2; exit $$RES; fi; \
 		echo "`date -u`: OK : All *.dev files have passed the basic sanity check : $$PASSED"; \
 		exit 0; \
 	)
