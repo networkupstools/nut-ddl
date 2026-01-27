@@ -50,14 +50,7 @@ driver.parameter.serial: [REDACTED]
 driver.parameter.synchronous: auto
 driver.parameter.usb_hid_desc_index: 1
 driver.parameter.usb_hid_rep_index: 1
-
-
-#driver.parameter.pollonly:COMMENT
-#If it is not set, the driver may crash or have some odd error
-driver.parameter.pollonly: 1 
-#driver.parameter.pollonly:EOC
-
-
+driver.parameter.pollonly: 1	#COMMENT: If it is not set, the driver may crash or have some odd error
 driver.parameter.vendor: Vertiv Co.
 driver.parameter.vendorid: 10AF
 driver.state: quiet
