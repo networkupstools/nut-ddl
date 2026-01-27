@@ -52,7 +52,7 @@ check-content-markup:
 					echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && continue; \
 				fi ; \
 			fi ; \
-			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' >&2 && echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && continue; \
+			egrep -v '^( *\#.*|.*:.*)$$' "$$F" | egrep -v '^$$' >&2 && echo "^^^ $$F" >&2 && FAILED="$$FAILED $$F" && RES=2 && continue; \
 			PASSED="$$PASSED $$F"; \
 		done; \
 		if [ -n "$$FAILED" ]; then echo "`date -u`: FAILED sanity-check (got RES=$$RES) in following file(s) : $$FAILED" >&2; exit 1; fi; \
