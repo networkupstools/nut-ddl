@@ -81,5 +81,18 @@ ups.serial: [REDACTED]
 ups.status: OL CHRG
 ups.vendorid: 10af
 
+# DEVICE:COMMENT-BLOCK:FIXME:UPSRW: UPS
+# [driver.debug]
+# Current debug verbosity level of the driver program
+# Type: NUMBER
+# Value: 0
 
+
+
+# [driver.flag.allow_killpower]
+# Safety flip-switch to allow the driver daemon to send UPS shutdown command (accessible via driver.killpower) 
+# This is NOT tested, Use at your own Risk
+# Type: NUMBER
+# Value: 0
+# DEVICE:EOC
 
