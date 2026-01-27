@@ -40,7 +40,7 @@ check-content-markup:
 	find . -type f -name '*.dev' | ( \
 		echo "`date -u`: Sanity-checking the *.dev files..." >&2 ; \
 		if [ -x $(NUT_WEBSITE_DIR)/tools/nut-ddl.py ] ; then \
-			echo "`date -u`: will use $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" >&2 ; \
+			echo "`date -u`: Will use $(NUT_DDL_PYTHON) $(NUT_WEBSITE_DIR)/tools/nut-ddl.py for deeper checks" >&2 ; \
 		fi ; \
 		FAILED=""; \
 		PASSED=""; \
