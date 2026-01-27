@@ -1,7 +1,5 @@
 # Please add if relevant: DEVICE:URL:REPORT: <GitHub issue/PR or Mailing list archive entry URL>
-# Please add if relevant: DEVICE:URL:VENDOR: <Vendor/Manufacturer/Product page URL>
 # DEVICE:URL:VENDOR: https://www.vertiv.com/en-us/products-catalog/critical-power/uninterruptible-power-supplies-ups/psi5-800rt120/
-
 
 # Please add comments for humans here and perhaps raise concerns about the data points,
 # see https://networkupstools.org/ddl/#devseq-files for comment-tag syntax
@@ -55,8 +53,8 @@ driver.parameter.usb_hid_rep_index: 1
 
 
 #driver.parameter.pollonly:COMMENT
-#If its not set the driver may crash or have some odd error
-driver.parameter.pollonly 1 
+#If it is not set, the driver may crash or have some odd error
+driver.parameter.pollonly: 1 
 #driver.parameter.pollonly:EOC
 
 
