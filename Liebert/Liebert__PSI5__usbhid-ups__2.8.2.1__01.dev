@@ -5,25 +5,25 @@
 # see https://networkupstools.org/ddl/#devseq-files for comment-tag syntax
 # strip sensitive data (passwords, SNMP community, serial number, IP address, host name...)
 # and post as a pull request to https://github.com/networkupstools/nut-ddl/
-# DEVICE:COMMENT:
-# There is a temprature sensor inside this UPS but its not reported here
-# 
+
+# DEVICE:COMMENT-BLOCK:UPSCONF:
+# > There is a temprature sensor inside this UPS but its not reported here
 # [UPS]
-#	driver = "usbhid-ups"
-#	port = "auto"
-#	vendorid = "10AF"
-#	productid = "0002"
-#	product = "Liebert PSI5"
-#	vendor = "Vertiv Co."
-#   These are the most important parameters
-#   Otherwise the UPS reports OB and no Battery %
-#	usb_hid_rep_index = 1
-#	usb_hid_desc_index = 1
-#	pollonly = 1
-# 
-#	# bus = "001"
-#	# device = "002"
-#	# busport = "001"
+#      driver = "usbhid-ups"
+#      port = "auto"
+#      vendorid = "10AF"
+#      productid = "0002"
+#      product = "Liebert PSI5"
+#      vendor = "Vertiv Co."
+#      ### These are the most important parameters
+#      ### Otherwise the UPS reports OB and no Battery %
+#      usb_hid_rep_index = 1
+#      usb_hid_desc_index = 1
+#      pollonly = 1
+#      ### Optional:
+#      # bus = "001"
+#      # device = "002"
+#      # busport = "001"
 # DEVICE:EOC
 
 # :; upsc UPS
