@@ -1,12 +1,20 @@
 # DEVICE:URL:REPORT: https://github.com/networkupstools/nut/pull/3579
 
 # DEVICE:COMMENT
-# apcmicrolink is a new driver (merged via PR #3579, not yet in any
+# apcmicrolink is a new driver (merged via NUT PR #3579, not yet in any
 # tagged NUT release) for APC Smart-UPS units with no serial port,
 # using the AP9641-style "Microlink" protocol tunnelled over USB HID.
 # This report is from an APC Smart-UPS 500 (SCL500RM1UC). Needs the
 # APC/Schneider Electric cable 940-0504 (USB A to USB A) -- a standard
 # USB A-to-B cable will not work.
+#
+# Several settable variables (delays, thresholds, input.sensitivity,
+# battery.date, the outlet-group timer/schedule fields) are reported by
+# `upsrw` with `Type: NUMBER` and no declared min/max, which doesn't map
+# cleanly onto DDL's STRING/RANGE/ENUM #RW: markup -- left as plain
+# comments below rather than guessed at. Only the four genuine STRING
+# variables (three outlet-group names + ups.id, each with a published
+# max length) are given as #RW: tags.
 # DEVICE:EOC
 
 # DEVICE:COMMENT-BLOCK:UPSCONF: ups.conf
@@ -16,16 +24,6 @@
 #   vendorid = 051d
 #   productid = 0003
 #   desc = "APC Smart-UPS 500 (SCL500RM1UC), USB HID tunnel"
-# DEVICE:EOC
-
-# DEVICE:COMMENT
-# Several settable variables (delays, thresholds, input.sensitivity,
-# battery.date, the outlet-group timer/schedule fields) are reported by
-# `upsrw` with `Type: NUMBER` and no declared min/max, which doesn't map
-# cleanly onto DDL's STRING/RANGE/ENUM #RW: markup -- left as plain
-# comments below rather than guessed at. Only the four genuine STRING
-# variables (three outlet-group names + ups.id, each with a published
-# max length) are given as #RW: tags.
 # DEVICE:EOC
 
 # :; upsc scl500@localhost
