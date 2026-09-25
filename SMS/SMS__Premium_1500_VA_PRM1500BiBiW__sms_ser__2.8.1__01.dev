@@ -121,51 +121,9 @@ ups.type: line-interactive
 # 2.8.1 driver an outage shows as BYPASS.
 # ups.status:EOC
 
-# DEVICE:COMMENT-BLOCK:UPSRW: ups
-# [driver.debug]
-# Current debug verbosity level of the driver program
-# Type: NUMBER
-# Value: 0
-#
-# [driver.flag.allow_killpower]
-# Safety flip-switch to allow the driver daemon to send UPS shutdown command (accessible via driver.killpower)
-# Type: NUMBER
-# Value: 0
-#
-# [ups.delay.reboot]
-# Interval to wait before rebooting the UPS (seconds)
-# Type: NUMBER
-# Value: 64
-#
-# [ups.delay.shutdown]
-# Interval to wait after shutdown with delay command (seconds)
-# Type: NUMBER
-# Value: 30
-#
-# [ups.delay.start]
-# Interval to wait before (re)starting the load (seconds)
-# Type: NUMBER
-# Value: 60
-# DEVICE:EOC
-
 #RW:ups.delay.reboot:RANGE:"0" "39321"	#COMMENT: seconds, converted to 0.6 s units by the driver
 #RW:ups.delay.shutdown:RANGE:"0" "39321"	#COMMENT: seconds, converted to 0.6 s units by the driver
 #RW:ups.delay.start:RANGE:"0" "65535"	#COMMENT: seconds, sent rounded up to whole minutes, never 0
-
-# DEVICE:COMMENT-BLOCK:UPSCMD: ups
-# beeper.toggle - Toggle the UPS beeper
-# driver.killpower - Tell the driver daemon to initiate UPS shutdown; should be unlocked with driver.flag.allow_killpower option or variable setting
-# driver.reload - Reload running driver configuration from the file system (only works for changes in some options)
-# driver.reload-or-error - Reload running driver configuration from the file system (only works for changes in some options); return an error if something changed and could not be applied live (so the caller can restart it with new options)
-# driver.reload-or-exit - Reload running driver configuration from the file system (only works for changes in some options); exit the running driver if something changed and could not be applied live (so service management framework can restart it with new options)
-# shutdown.reboot - Shut down the load briefly while rebooting the UPS
-# shutdown.return - Turn off the load and return when power is back
-# shutdown.stop - Stop a shutdown in progress
-# test.battery.start - Start a battery test
-# test.battery.start.deep - Start a deep battery test
-# test.battery.start.quick - Start a quick battery test
-# test.battery.stop - Stop the battery test
-# DEVICE:EOC
 
 #CMD:beeper.toggle	#COMMENT: verified
 #CMD:shutdown.reboot	#COMMENT: verified, output off after ups.delay.reboot, back by itself about 15 s later
